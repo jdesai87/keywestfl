@@ -29,7 +29,7 @@
   .notice-warn{background:var(--warn-bg);color:var(--warn-tx)}
   .notice-info{background:var(--info-bg);color:var(--info-tx)}
   .notice strong{font-weight:500}
-  .content{max-width:700px;margin:0 auto;padding:1rem 0 2.5rem}
+  .content{max-width:700px;margin:0 auto;padding:1rem 0 1rem}
   .controls{display:flex;gap:.5rem;padding:.65rem 1rem 0;justify-content:flex-end}
   .ctrl-btn{font-family:'DM Sans',sans-serif;font-size:.68rem;color:var(--mid);background:none;border:1px solid var(--light);border-radius:20px;padding:.28rem .7rem;cursor:pointer}
   .ctrl-btn:hover{background:var(--light)}
@@ -66,11 +66,12 @@
   .badge-title{font-size:.88rem;font-weight:500;color:var(--deep);line-height:1.3;margin-bottom:2px}
   .badge-title a{color:var(--mid);text-decoration:none;border-bottom:1px solid var(--light)}
   .badge-note{font-size:.73rem;color:var(--pebble);line-height:1.5}
-  .footer{background:var(--deep);color:var(--light);text-align:center;padding:1.1rem 1rem;font-size:.68rem;letter-spacing:.05em;margin-top:1.5rem}
+  .footer{background:var(--deep);color:var(--light);text-align:center;padding:1.1rem 1rem;font-size:.68rem;letter-spacing:.05em;margin-top:1rem}
   .footer strong{color:var(--gold)}
   .footer small{opacity:.6;font-size:.62rem;margin-top:4px;display:block}
   .day-hero{position:relative;height:160px;overflow:hidden;cursor:pointer;-webkit-tap-highlight-color:transparent}
-  .day-hero-img{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .4s ease}
+  .day-hero-img{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .4s ease;position:relative}
+  .day-hero-img img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0}
   .day:hover .day-hero-img{transform:scale(1.03)}
   .day-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.05) 0%,rgba(26,74,69,.85) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:.85rem 1rem}
   .day-hero-eyebrow{font-size:.6rem;font-weight:600;letter-spacing:.15em;color:var(--gold);text-transform:uppercase;margin-bottom:.2rem}
@@ -84,7 +85,7 @@
 
 <div class="hero">
   <div class="hero-eyebrow">Key West, Florida &nbsp;·&nbsp; May 4–8, 2025</div>
-  <h1 class="hero-title">Babymoon<br><em>Itinerary</em></h1>
+  <h1 class="hero-title"><em>Babymoon</em></h1>
   <div class="hero-sub">Jay &amp; Puja &nbsp;·&nbsp; Perry Hotel &amp; Marina &nbsp;·&nbsp; Mon – Fri</div>
 </div>
 
@@ -100,11 +101,12 @@
 
   <div class="day open" id="day-mon">
     <div class="day-hero" onclick="toggle(this)">
-      <div class="day-hero-img" id="img-mon" style="background:linear-gradient(170deg, #FF6B35 0%, #F7931E 25%, #FFC85A 55%, #1A4A45 100%)"></div>
+      <div class="day-hero-img" id="img-mon" style="background:linear-gradient(170deg, #FF6B35 0%, #F7931E 25%, #FFC85A 55%, #1A4A45 100%)">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Mallory_square_key_west_at_dusk.jpg/800px-Mallory_square_key_west_at_dusk.jpg" alt="Mallory Square sunset Key West" onerror="this.style.display='none'" loading="lazy"></div>
       <div class="day-hero-overlay">
         <div class="day-hero-eyebrow">Mon · May 4</div>
         <div class="day-hero-title">Arrive, Explore, Check In</div>
-        <div class="day-hero-sub">Land 10:24a · bags at hotel · likely check-in ~2p</div>
+        <div class="day-hero-sub">Land 10:24a · Old Town · Mallory sunset</div>
       </div>
       <div class="day-hero-chevron">▼</div>
     </div>
@@ -166,11 +168,12 @@
 
   <div class="day" id="day-tue">
     <div class="day-hero" onclick="toggle(this)">
-      <div class="day-hero-img" id="img-tue" style="background:linear-gradient(170deg, #006994 0%, #0099CC 30%, #40C4E0 60%, #A8E6EF 85%, #E8F8FB 100%)"></div>
+      <div class="day-hero-img" id="img-tue" style="background:linear-gradient(170deg, #006994 0%, #0099CC 30%, #40C4E0 60%, #A8E6EF 100%)">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Fort_Zachary_Taylor_State_Park_beach.jpg/800px-Fort_Zachary_Taylor_State_Park_beach.jpg" alt="Fort Zachary Taylor beach Key West" onerror="this.style.display='none'" loading="lazy"></div>
       <div class="day-hero-overlay">
         <div class="day-hero-eyebrow">Tue · May 5</div>
         <div class="day-hero-title">Beach + Hot Tin Roof</div>
-        <div class="day-hero-sub">Beach day · Hot Tin Roof dinner locked</div>
+        <div class="day-hero-sub">Lighthouse · Beach · Southernmost Point</div>
       </div>
       <div class="day-hero-chevron">▼</div>
     </div>
@@ -210,10 +213,11 @@
 
   <div class="day" id="day-wed">
     <div class="day-hero" onclick="toggle(this)">
-      <div class="day-hero-img" id="img-wed" style="background:linear-gradient(170deg, #2D5A27 0%, #4A8C3F 30%, #C9963A 65%, #E8C870 100%)"></div>
+      <div class="day-hero-img" id="img-wed" style="background:linear-gradient(170deg, #2D5A27 0%, #4A8C3F 30%, #C9963A 65%, #E8C870 100%)">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Hemingway_house_key_west.jpg/800px-Hemingway_house_key_west.jpg" alt="Hemingway House Key West" onerror="this.style.display='none'" loading="lazy"></div>
       <div class="day-hero-overlay">
         <div class="day-hero-eyebrow">Wed · May 6</div>
-        <div class="day-hero-title">Blue Heaven + Hemingway + Spa + Beach + Dolphin Cruise</div>
+        <div class="day-hero-title">Blue Heaven + Hemingway + Spa + Cruise</div>
         <div class="day-hero-sub">Spa 11:30a locked · Dolphin Watch 6p locked</div>
       </div>
       <div class="day-hero-chevron">▼</div>
@@ -275,11 +279,12 @@
 
   <div class="day" id="day-thu">
     <div class="day-hero" onclick="toggle(this)">
-      <div class="day-hero-img" id="img-thu" style="background:linear-gradient(170deg, #C4623A 0%, #E8844A 30%, #F5C842 60%, #2D7A6E 100%)"></div>
+      <div class="day-hero-img" id="img-thu" style="background:linear-gradient(170deg, #C4623A 0%, #E8844A 30%, #F5C842 60%, #2D7A6E 100%)">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Key_West_Duval_Street.jpg/800px-Key_West_Duval_Street.jpg" alt="Duval Street Key West" onerror="this.style.display='none'" loading="lazy"></div>
       <div class="day-hero-overlay">
         <div class="day-hero-eyebrow">Thu · May 7</div>
         <div class="day-hero-title">Old Town + Santiago's</div>
-        <div class="day-hero-sub">Easy pace · early night before Friday flight</div>
+        <div class="day-hero-sub">Bahama Village · Cemetery · Santiago's</div>
       </div>
       <div class="day-hero-chevron">▼</div>
     </div>
@@ -295,15 +300,22 @@
       <div class="activity">
         <div class="act-time">11:00 AM</div>
         <div class="act-content">
-          <div class="act-name">Browse Old Town</div>
-          <div class="act-note">Wander Duval and side streets. Good for local art, baby keepsakes, and general Key West vibes. No agenda.</div>
+          <div class="act-name">Bahama Village + Besame Mucho</div>
+          <div class="act-note">Wander into Bahama Village — Key West's most charming neighborhood. Besame Mucho on Petronia has unique local gifts, jewelry, and the best baby keepsakes on the island.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">12:00 PM</div>
+        <div class="act-content">
+          <div class="act-name"><a href="https://maps.google.com/?q=Key+West+Cemetery" target="_blank">Key West Cemetery</a></div>
+          <div class="act-note">Right next to Santiago's. Above-ground tombs from 1847 with famously quirky epitaphs — "I told you I was sick." Free, 20 min, genuinely unforgettable.</div>
         </div>
       </div>
       <div class="activity">
         <div class="act-time">1:00 PM</div>
         <div class="act-content">
           <div class="act-name"><a href="https://maps.google.com/?cid=9385428895879407056" target="_blank">Santiago's Bodega</a></div>
-          <div class="act-note">Hidden gem tapas, Petronia St. Safe picks: burrata, patatas bravas, lemon chicken, grilled shrimp &amp; chorizo. No res needed.</div>
+          <div class="act-note">Hidden gem tapas on Petronia St. Burrata, patatas bravas, lemon chicken, grilled shrimp &amp; chorizo. No res needed. Best casual lunch on the island.</div>
         </div>
       </div>
       <div class="activity">
@@ -327,7 +339,8 @@
 
   <div class="day" id="day-fri">
     <div class="day-hero" onclick="toggle(this)">
-      <div class="day-hero-img" id="img-fri" style="background:linear-gradient(170deg, #0A1628 0%, #1A3A6E 30%, #2D6AAE 60%, #F5A623 85%, #FDD835 100%)"></div>
+      <div class="day-hero-img" id="img-fri" style="background:linear-gradient(170deg, #0A1628 0%, #1A3A6E 30%, #2D6AAE 60%, #F5A623 85%, #FDD835 100%)">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Key_West_International_Airport_2013.jpg/800px-Key_West_International_Airport_2013.jpg" alt="Key West airport departure" onerror="this.style.display='none'" loading="lazy"></div>
       <div class="day-hero-overlay">
         <div class="day-hero-eyebrow">Fri · May 8</div>
         <div class="day-hero-title">Departure Morning</div>
