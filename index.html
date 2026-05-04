@@ -69,6 +69,17 @@
   .footer{background:var(--deep);color:var(--light);text-align:center;padding:1.1rem 1rem;font-size:.68rem;letter-spacing:.05em;margin-top:1.5rem}
   .footer strong{color:var(--gold)}
   .footer small{opacity:.6;font-size:.62rem;margin-top:4px;display:block}
+  .day-hero{position:relative;height:160px;overflow:hidden;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .day-hero-img{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .4s ease}
+  .day:hover .day-hero-img{transform:scale(1.03)}
+  .day-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.05) 0%,rgba(26,74,69,.85) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:.85rem 1rem}
+  .day-hero-eyebrow{font-size:.6rem;font-weight:600;letter-spacing:.15em;color:var(--gold);text-transform:uppercase;margin-bottom:.2rem}
+  .day-hero-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:white;line-height:1.15}
+  .day-hero-sub{font-size:.68rem;color:var(--light);margin-top:3px;opacity:.9}
+  .day-hero-chevron{position:absolute;top:.75rem;right:.85rem;color:rgba(255,255,255,.7);font-size:.75rem;transition:transform .2s}
+  .day.open .day-hero-chevron{transform:rotate(180deg)}
+  .shimmer{background:linear-gradient(90deg,var(--light) 25%,#E8F4F2 50%,var(--light) 75%);background-size:200% 100%;animation:shimmer 1.5s infinite}
+  @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
 </style>
 </head>
 <body>
@@ -89,14 +100,15 @@
 
   <!-- MONDAY -->
 
-  <div class="day" id="day-mon">
-    <div class="day-header" onclick="toggle(this)">
-      <div class="day-badge">Mon<br>May 4</div>
-      <div class="day-info">
-        <div class="day-title">Arrive, Explore, Check In</div>
-        <div class="day-sub">Land 10:24a · bags at hotel · likely check-in ~2p</div>
+  <div class="day open" id="day-mon">
+    <div class="day-hero" onclick="toggle(this)">
+      <div class="day-hero-img shimmer" id="img-mon"></div>
+      <div class="day-hero-overlay">
+        <div class="day-hero-eyebrow">Mon · May 4</div>
+        <div class="day-hero-title">Arrive, Explore, Check In</div>
+        <div class="day-hero-sub">Land 10:24a · bags at hotel · likely check-in ~2p</div>
       </div>
-      <div class="day-chevron">▼</div>
+      <div class="day-hero-chevron">▼</div>
     </div>
     <div class="day-body">
       <div class="notice notice-info">Official check-in is 4 PM but you'll likely get your room around 2 PM. Drop bags at the front desk on arrival and explore Old Town hands-free.</div>
@@ -155,13 +167,14 @@
   <!-- TUESDAY -->
 
   <div class="day" id="day-tue">
-    <div class="day-header" onclick="toggle(this)">
-      <div class="day-badge">Tue<br>May 5</div>
-      <div class="day-info">
-        <div class="day-title">Beach + Hot Tin Roof</div>
-        <div class="day-sub">Hot Tin Roof dinner locked</div>
+    <div class="day-hero" onclick="toggle(this)">
+      <div class="day-hero-img shimmer" id="img-tue"></div>
+      <div class="day-hero-overlay">
+        <div class="day-hero-eyebrow">Tue · May 5</div>
+        <div class="day-hero-title">Beach + Hot Tin Roof</div>
+        <div class="day-hero-sub">Beach day · Hot Tin Roof dinner locked</div>
       </div>
-      <div class="day-chevron">▼</div>
+      <div class="day-hero-chevron">▼</div>
     </div>
     <div class="day-body">
       <div class="activity">
@@ -198,13 +211,14 @@
   <!-- WEDNESDAY -->
 
   <div class="day" id="day-wed">
-    <div class="day-header" onclick="toggle(this)">
-      <div class="day-badge">Wed<br>May 6</div>
-      <div class="day-info">
-        <div class="day-title">Blue Heaven + Hemingway + Spa + Beach + Dolphin Cruise</div>
-        <div class="day-sub">Ocean Wellness 10:15a · Dolphin cruise 6p locked</div>
+    <div class="day-hero" onclick="toggle(this)">
+      <div class="day-hero-img shimmer" id="img-wed"></div>
+      <div class="day-hero-overlay">
+        <div class="day-hero-eyebrow">Wed · May 6</div>
+        <div class="day-hero-title">Blue Heaven + Hemingway + Spa + Beach + Dolphin Cruise</div>
+        <div class="day-hero-sub">Spa 11:30a locked · Dolphin Watch 6p locked</div>
       </div>
-      <div class="day-chevron">▼</div>
+      <div class="day-hero-chevron">▼</div>
     </div>
     <div class="day-body">
       <div class="activity">
@@ -267,13 +281,14 @@
   <!-- THURSDAY -->
 
   <div class="day" id="day-thu">
-    <div class="day-header" onclick="toggle(this)">
-      <div class="day-badge">Thu<br>May 7</div>
-      <div class="day-info">
-        <div class="day-title">Old Town + Santiago's</div>
-        <div class="day-sub">Easy pace — early night before Friday flight</div>
+    <div class="day-hero" onclick="toggle(this)">
+      <div class="day-hero-img shimmer" id="img-thu"></div>
+      <div class="day-hero-overlay">
+        <div class="day-hero-eyebrow">Thu · May 7</div>
+        <div class="day-hero-title">Old Town + Santiago's</div>
+        <div class="day-hero-sub">Easy pace · early night before Friday flight</div>
       </div>
-      <div class="day-chevron">▼</div>
+      <div class="day-hero-chevron">▼</div>
     </div>
     <div class="day-body">
       <div class="notice notice-warn">Early Friday flight — back at the hotel by 9 PM, packed and ready.</div>
@@ -318,13 +333,14 @@
   <!-- FRIDAY -->
 
   <div class="day" id="day-fri">
-    <div class="day-header" onclick="toggle(this)">
-      <div class="day-badge">Fri<br>May 8</div>
-      <div class="day-info">
-        <div class="day-title">Departure Morning</div>
-        <div class="day-sub">EYW — arrive 40 min early</div>
+    <div class="day-hero" onclick="toggle(this)">
+      <div class="day-hero-img shimmer" id="img-fri"></div>
+      <div class="day-hero-overlay">
+        <div class="day-hero-eyebrow">Fri · May 8</div>
+        <div class="day-hero-title">Departure Morning</div>
+        <div class="day-hero-sub">EYW · arrive 40 min early</div>
       </div>
-      <div class="day-chevron">▼</div>
+      <div class="day-hero-chevron">▼</div>
     </div>
     <div class="day-body">
       <div class="activity">
@@ -380,25 +396,34 @@
 </div>
 
 <script>
-function toggle(h) { h.closest('.day').classList.toggle('open'); }
+const PHOTOS = {
+  mon: 'https://source.unsplash.com/800x400/?key-west,sunset,florida',
+  tue: 'https://source.unsplash.com/800x400/?tropical,beach,clear-water',
+  wed: 'https://source.unsplash.com/800x400/?key-west,colorful,buildings',
+  thu: 'https://source.unsplash.com/800x400/?florida-keys,palm,street',
+  fri: 'https://source.unsplash.com/800x400/?airplane,sunrise,travel',
+};
+
+Object.entries(PHOTOS).forEach(([day, url]) => {
+  const el = document.getElementById('img-' + day);
+  if (!el) return;
+  const img = new Image();
+  img.onload = () => { el.style.backgroundImage = `url(${url})`; el.classList.remove('shimmer'); };
+  img.onerror = () => { el.style.background = 'var(--deep)'; el.classList.remove('shimmer'); };
+  img.src = url;
+});
+
+function toggle(hero) { hero.closest('.day').classList.toggle('open'); }
 function toggleAll(o) { document.querySelectorAll('.day').forEach(d => o ? d.classList.add('open') : d.classList.remove('open')); }
 
 (function(){
-  const map = {'5/4':'Mon','5/5':'Tue','5/6':'Wed','5/7':'Thu','5/8':'Fri'};
+  const map = {'5/4':'mon','5/5':'tue','5/6':'wed','5/7':'thu','5/8':'fri'};
   const now = new Date();
-  const key = (now.getMonth()+1) + '/' + now.getDate();
-  const badge = map[key];
+  const key = (now.getMonth()+1)+'/'+now.getDate();
+  const id = 'day-' + (map[key] || 'mon');
   document.querySelectorAll('.day').forEach(d => d.classList.remove('open'));
-  let opened = false;
-  if (badge) {
-    document.querySelectorAll('.day-badge').forEach(b => {
-      if (b.textContent.trim().startsWith(badge)) {
-        b.closest('.day').classList.add('open');
-        opened = true;
-      }
-    });
-  }
-  if (!opened) document.querySelector('.day').classList.add('open');
+  const t = document.getElementById(id);
+  if (t) t.classList.add('open');
 })();
 </script>
 
