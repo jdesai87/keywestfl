@@ -380,66 +380,26 @@
 </div>
 
 <script>
-// Day IDs mapped to dates (month, day)
-const DAY_DATES = {
-  'day-mon': [5, 4],
-  'day-tue': [5, 5],
-  'day-wed': [5, 6],
-  'day-thu': [5, 7],
-  'day-fri': [5, 8],
-};
-
-function getTodayId() {
-  const now = new Date();
-  const m = now.getMonth() + 1;
-  const d = now.getDate();
-  for (const [id, [dm, dd]] of Object.entries(DAY_DATES)) {
-    if (dm === m && dd === d) return id;
-  }
-  return null;
-}
-
-function openToday() {
-  const todayId = getTodayId();
-  document.querySelectorAll('.day').forEach(day => {
-    if (day.id === todayId) {
-      day.classList.add('open');
-    } else {
-      day.classList.remove('open');
-    }
-  });
-  // If no matching day (before/after trip), open Monday by default
-  if (!todayId) {
-    document.getElementById('day-mon').classList.add('open');
-  }
-}
-
 function toggle(h) { h.closest('.day').classList.toggle('open'); }
 function toggleAll(o) { document.querySelectorAll('.day').forEach(d => o ? d.classList.add('open') : d.classList.remove('open')); }
 
-// Auto-expand only today's day
 (function(){
-  const dates = {
-    '2025-05-04': 'Mon',
-    '2025-05-05': 'Tue',
-    '2025-05-06': 'Wed',
-    '2025-05-07': 'Thu',
-    '2025-05-08': 'Fri',
-  };
-  const today = new Date().toLocaleDateString('en-CA');
-  const badge = dates[today];
+  const map = {'5/4':'Mon','5/5':'Tue','5/6':'Wed','5/7':'Thu','5/8':'Fri'};
+  const now = new Date();
+  const key = (now.getMonth()+1) + '/' + now.getDate();
+  const badge = map[key];
   document.querySelectorAll('.day').forEach(d => d.classList.remove('open'));
+  let opened = false;
   if (badge) {
     document.querySelectorAll('.day-badge').forEach(b => {
       if (b.textContent.trim().startsWith(badge)) {
         b.closest('.day').classList.add('open');
+        opened = true;
       }
     });
-  } else {
-    document.querySelector('.day').classList.add('open');
   }
+  if (!opened) document.querySelector('.day').classList.add('open');
 })();
 </script>
 
 </body>
-</html>
