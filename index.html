@@ -78,8 +78,6 @@
   .day-hero-sub{font-size:.68rem;color:var(--light);margin-top:3px;opacity:.9}
   .day-hero-chevron{position:absolute;top:.75rem;right:.85rem;color:rgba(255,255,255,.7);font-size:.75rem;transition:transform .2s}
   .day.open .day-hero-chevron{transform:rotate(180deg)}
-  .shimmer{background:linear-gradient(90deg,var(--light) 25%,#E8F4F2 50%,var(--light) 75%);background-size:200% 100%;animation:shimmer 1.5s infinite}
-  @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
 </style>
 </head>
 <body>
@@ -102,7 +100,7 @@
 
   <div class="day open" id="day-mon">
     <div class="day-hero" onclick="toggle(this)">
-      <div class="day-hero-img shimmer" id="img-mon"></div>
+      <div class="day-hero-img" id="img-mon" style="background:linear-gradient(170deg, #FF6B35 0%, #F7931E 25%, #FFC85A 55%, #1A4A45 100%)"></div>
       <div class="day-hero-overlay">
         <div class="day-hero-eyebrow">Mon · May 4</div>
         <div class="day-hero-title">Arrive, Explore, Check In</div>
@@ -168,7 +166,7 @@
 
   <div class="day" id="day-tue">
     <div class="day-hero" onclick="toggle(this)">
-      <div class="day-hero-img shimmer" id="img-tue"></div>
+      <div class="day-hero-img" id="img-tue" style="background:linear-gradient(170deg, #006994 0%, #0099CC 30%, #40C4E0 60%, #A8E6EF 85%, #E8F8FB 100%)"></div>
       <div class="day-hero-overlay">
         <div class="day-hero-eyebrow">Tue · May 5</div>
         <div class="day-hero-title">Beach + Hot Tin Roof</div>
@@ -212,7 +210,7 @@
 
   <div class="day" id="day-wed">
     <div class="day-hero" onclick="toggle(this)">
-      <div class="day-hero-img shimmer" id="img-wed"></div>
+      <div class="day-hero-img" id="img-wed" style="background:linear-gradient(170deg, #2D5A27 0%, #4A8C3F 30%, #C9963A 65%, #E8C870 100%)"></div>
       <div class="day-hero-overlay">
         <div class="day-hero-eyebrow">Wed · May 6</div>
         <div class="day-hero-title">Blue Heaven + Hemingway + Spa + Beach + Dolphin Cruise</div>
@@ -222,67 +220,62 @@
     </div>
     <div class="day-body">
       <div class="activity">
-        <div class="act-time">Morning</div>
+        <div class="act-time">8:30 AM</div>
         <div class="act-content">
-          <div class="act-name"><a href="https://www.perrykeywest.com/stock-island-restaurants" target="_blank">Matt's Stock Island Kitchen</a></div>
-          <div class="act-note">Free breakfast. Leave by 9:45 AM to make the spa — or grab something light after.</div>
+          <div class="act-name"><a href="https://maps.google.com/?cid=15172891216276788505" target="_blank">Blue Heaven</a></div>
+          <div class="act-note">Walk-in only — go early. Open-air courtyard, wandering roosters. Get the French toast.</div>
         </div>
       </div>
-
-```
-  <div class="activity">
-    <div class="act-time">12:00 PM</div>
-    <div class="act-content">
-      <div class="act-name"><a href="https://maps.google.com/?cid=15172891216276788505" target="_blank">Blue Heaven</a></div>
-      <div class="act-note">Walk-in only. Open-air courtyard, wandering roosters. Get the French toast. A true Key West institution.</div>
+      <div class="activity">
+        <div class="act-time">10:15 AM</div>
+        <div class="act-content">
+          <div class="act-name"><a href="https://maps.google.com/?cid=4768768385688895503" target="_blank">Hemingway Home</a></div>
+          <div class="act-note">2 min walk from Blue Heaven on Whitehead St. Guided tours every 30 min. Six-toed cats. ~$18/person.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">11:30 AM<div class="locked-badge">LOCKED</div></div>
+        <div class="act-content">
+          <div class="act-name"><a href="https://maps.google.com/?cid=18285309956897800669" target="_blank">Ocean Wellness Spa</a> — couples massage</div>
+          <div class="act-note">Prenatal-certified therapist confirmed. Uber ~5 min from Hemingway House. Leave by 11:15 AM.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">1:30 PM</div>
+        <div class="act-content">
+          <div class="act-name"><a href="https://maps.google.com/?cid=16685934452895176446" target="_blank">Fort Zachary Taylor Beach</a></div>
+          <div class="act-note">Best beach on the island. Chairs + umbrella on-site. Calm water, great shade. Relax after the massage.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">4:30 PM</div>
+        <div class="act-content">
+          <div class="act-name">Perry Hotel pool</div>
+          <div class="act-note">Rest before the cruise. Light snack at Salty Oyster if needed.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">6:00 PM<div class="locked-badge">LOCKED</div></div>
+        <div class="act-content">
+          <div class="act-name"><a href="https://maps.google.com/?q=Captain+Choice+Dolphin+Watch+Key+West" target="_blank">Captain Choice Dolphin Watch Cruise</a></div>
+          <div class="act-note">Departs Historic Seaport — Uber from Perry ~10 min. Back by ~8 PM.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">~8:00 PM</div>
+        <div class="act-content">
+          <div class="act-name"><a href="https://maps.google.com/?cid=2133076428450823443" target="_blank">Louie's Backyard</a></div>
+          <div class="act-note">Dinner after the cruise. Oceanfront, upscale. Reserve on OpenTable — ask for 8 PM.</div>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="activity">
-    <div class="act-time">1:30 PM</div>
-    <div class="act-content">
-      <div class="act-name"><a href="https://maps.google.com/?cid=4768768385688895503" target="_blank">Ernest Hemingway Home &amp; Museum</a></div>
-      <div class="act-note">2 min walk from Blue Heaven on Whitehead St. Guided tours every 30 min, ~1 hour total. Gorgeous estate, famous six-toed cats. ~$18/person.</div>
-    </div>
-  </div>
-  <div class="activity">
-    <div class="act-time">11:30 AM<div class="locked-badge">LOCKED</div></div>
-    <div class="act-content">
-      <div class="act-name"><a href="https://maps.google.com/?cid=18285309956897800669" target="_blank">Ocean Wellness Spa</a> — couples massage</div>
-      <div class="act-note">Prenatal-certified therapist confirmed. Uber ~5 min from Hemingway House. Leave by 11:15 AM.</div>
-    </div>
-  </div>
-  <div class="activity">
-    <div class="act-time">1:30 PM</div>
-    <div class="act-content">
-      <div class="act-name"><a href="https://maps.google.com/?cid=16685934452895176446" target="_blank">Fort Zachary Taylor Beach</a></div>
-      <div class="act-note">Best beach on the island. Chairs + umbrella on-site. Calm water, great shade. Relax after the massage.</div>
-    </div>
-  </div>
-
-  <div class="activity">
-    <div class="act-time">6:00 PM<div class="locked-badge">LOCKED</div></div>
-    <div class="act-content">
-      <div class="act-name"><a href="https://maps.google.com/?q=Captain+Choice+Dolphin+Watch+Key+West" target="_blank">Captain Choice Dolphin Watch Sunset Cruise</a></div>
-      <div class="act-note">Departs Historic Seaport — Uber from Perry ~10 min. Bring a light layer. Back by ~8 PM.</div>
-    </div>
-  </div>
-  <div class="activity">
-    <div class="act-time">~8:00 PM</div>
-    <div class="act-content">
-      <div class="act-name"><a href="https://maps.google.com/?cid=2133076428450823443" target="_blank">Louie's Backyard</a></div>
-      <div class="act-note">Dinner after the cruise. Oceanfront, upscale. Fresh catch grilled, conch chowder. Reserve on OpenTable — ask for an 8 PM table.</div>
-    </div>
-  </div>
-</div>
-```
-
   </div>
 
   <!-- THURSDAY -->
 
   <div class="day" id="day-thu">
     <div class="day-hero" onclick="toggle(this)">
-      <div class="day-hero-img shimmer" id="img-thu"></div>
+      <div class="day-hero-img" id="img-thu" style="background:linear-gradient(170deg, #C4623A 0%, #E8844A 30%, #F5C842 60%, #2D7A6E 100%)"></div>
       <div class="day-hero-overlay">
         <div class="day-hero-eyebrow">Thu · May 7</div>
         <div class="day-hero-title">Old Town + Santiago's</div>
@@ -334,7 +327,7 @@
 
   <div class="day" id="day-fri">
     <div class="day-hero" onclick="toggle(this)">
-      <div class="day-hero-img shimmer" id="img-fri"></div>
+      <div class="day-hero-img" id="img-fri" style="background:linear-gradient(170deg, #0A1628 0%, #1A3A6E 30%, #2D6AAE 60%, #F5A623 85%, #FDD835 100%)"></div>
       <div class="day-hero-overlay">
         <div class="day-hero-eyebrow">Fri · May 8</div>
         <div class="day-hero-title">Departure Morning</div>
@@ -381,22 +374,7 @@
 </div>
 
 <script>
-const PHOTOS = {
-  mon: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80', // sunset
-  tue: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80', // beach
-  wed: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800&q=80',    // colorful building
-  thu: 'https://images.unsplash.com/photo-1537953773345-d172ccf13cf4?w=800&q=80', // tropical street
-  fri: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80', // airplane window
-};
-
-Object.entries(PHOTOS).forEach(([day, url]) => {
-  const el = document.getElementById('img-' + day);
-  if (!el) return;
-  const img = new Image();
-  img.onload = () => { el.style.backgroundImage = `url(${url})`; el.classList.remove('shimmer'); };
-  img.onerror = () => { el.style.background = 'var(--deep)'; el.classList.remove('shimmer'); };
-  img.src = url;
-});
+// photos handled via CSS
 
 function toggle(hero) { hero.closest('.day').classList.toggle('open'); }
 function toggleAll(o) { document.querySelectorAll('.day').forEach(d => o ? d.classList.add('open') : d.classList.remove('open')); }
