@@ -24,15 +24,10 @@
   .hero-eyebrow{font-size:.68rem;font-weight:500;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:.7rem}
   .hero-title{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:#FDFAF6;line-height:1.05;margin-bottom:.7rem}
   .hero-sub{font-size:.78rem;color:var(--light);letter-spacing:.06em;opacity:.9}
-  .meta-strip{display:grid;grid-template-columns:repeat(3,1fr);background:var(--light);border-bottom:1px solid var(--border)}
-  .meta-cell{padding:.85rem .5rem;text-align:center;border-right:1px solid var(--border)}
-  .meta-cell:last-child{border-right:none}
-  .meta-val{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--deep);display:block;line-height:1.2}
-  .meta-key{font-size:.62rem;color:var(--pebble);letter-spacing:.04em;margin-top:2px;display:block}
   .notice{padding:.65rem 1.1rem;font-size:.76rem;line-height:1.55}
-  .notice-info{background:var(--info-bg);color:var(--info-tx)}
   .notice-gold{background:var(--gold-bg);color:var(--gold-tx)}
   .notice-warn{background:var(--warn-bg);color:var(--warn-tx)}
+  .notice-info{background:var(--info-bg);color:var(--info-tx)}
   .notice strong{font-weight:500}
   .content{max-width:700px;margin:0 auto;padding:1rem 0 2.5rem}
   .controls{display:flex;gap:.5rem;padding:.65rem 1rem 0;justify-content:flex-end}
@@ -55,7 +50,7 @@
   .activity:last-child{border-bottom:none}
   .activity:nth-child(even){background:var(--sand)}
   .activity:nth-child(odd){background:var(--cream)}
-  .act-time{font-size:.62rem;font-weight:500;color:var(--mid);text-align:center;padding:.65rem .4rem;min-width:54px;border-right:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:3px;flex-shrink:0;line-height:1.35}
+  .act-time{font-size:.62rem;font-weight:500;color:var(--mid);text-align:center;padding:.65rem .4rem;min-width:54px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:3px;flex-shrink:0;line-height:1.35}
   .locked-badge{font-size:.52rem;font-weight:700;color:var(--terra);letter-spacing:.04em;line-height:1}
   .act-content{padding:.6rem .8rem;flex:1;min-width:0}
   .act-name{font-size:.9rem;font-weight:500;color:var(--deep);line-height:1.3;margin-bottom:3px}
@@ -84,12 +79,6 @@
   <div class="hero-sub">Jay &amp; Puja &nbsp;·&nbsp; Perry Hotel &amp; Marina &nbsp;·&nbsp; Mon – Fri</div>
 </div>
 
-<div class="meta-strip">
-  <div class="meta-cell"><span class="meta-val">Perry Hotel</span><span class="meta-key">Stock Island</span></div>
-  <div class="meta-cell"><span class="meta-val">May 4–8</span><span class="meta-key">Mon – Fri, 2025</span></div>
-  <div class="meta-cell"><span class="meta-val">EYW</span><span class="meta-key">Fri AM departure</span></div>
-</div>
-<div class="notice notice-info">The Perry is on Stock Island — 10 min Uber to Old Town. Free hotel shuttle included in resort fee. Confirm $100 credit scope at check-in.</div>
 <div class="notice notice-gold"><strong>Free breakfast included every morning</strong> at Matt's Stock Island Kitchen — no obligation to eat there though. <strong>$100 Hotel Credit</strong> is separate — best used at Salty Oyster for happy hour drinks or applied to dinner. Confirm scope at check-in.</div>
 
 <div class="content">
@@ -100,7 +89,7 @@
 
   <!-- MONDAY -->
 
-  <div class="day open">
+  <div class="day" id="day-mon">
     <div class="day-header" onclick="toggle(this)">
       <div class="day-badge">Mon<br>May 4</div>
       <div class="day-info">
@@ -110,19 +99,12 @@
       <div class="day-chevron">▼</div>
     </div>
     <div class="day-body">
-      <div class="notice notice-info">Official check-in is 4 PM but you'll likely get your room around 2 PM. Drop bags at the front desk on arrival, explore Old Town, and head back when ready.</div>
+      <div class="notice notice-info">Official check-in is 4 PM but you'll likely get your room around 2 PM. Drop bags at the front desk on arrival and explore Old Town hands-free.</div>
       <div class="activity">
         <div class="act-time">10:24 AM</div>
         <div class="act-content">
-          <div class="act-name">Land at EYW</div>
+          <div class="act-name">Land at EYW → Perry Hotel</div>
           <div class="act-note">Uber to the Perry first (~20 min). Drop bags at the front desk — they'll hold them. Then Uber into Old Town hands-free.</div>
-        </div>
-      </div>
-      <div class="activity">
-        <div class="act-time">~11 AM</div>
-        <div class="act-content">
-          <div class="act-name">Butterfly Conservatory</div>
-          <div class="act-note">Air-conditioned, peaceful, magical. Perfect first stop after a morning flight. Flamingos and exotic butterflies. Easy 45–60 min visit. <a href="https://maps.google.com/?cid=8786664853202405372" target="_blank" style="color:var(--mid)">Open in maps ↗</a></div>
         </div>
       </div>
       <div class="activity">
@@ -136,32 +118,32 @@
         <div class="act-time">1:00 PM</div>
         <div class="act-content">
           <div class="act-name"><a href="https://maps.google.com/?cid=10302192257345296052" target="_blank">Kaya Island Eats</a> — lunch</div>
-          <div class="act-note">Caribbean fusion, Duval St. Open from 11 AM. Grilled fish tacos, shrimp dishes. Mocktail: ask for mai tai without rum — base is all juice.</div>
+          <div class="act-note">Caribbean fusion, Duval St. Grilled fish tacos, shrimp dishes. Mocktail: ask for mai tai without rum — base is all juice.</div>
         </div>
       </div>
       <div class="activity">
         <div class="act-time">1:30 PM</div>
         <div class="act-content">
           <div class="act-name"><a href="https://maps.google.com/?cid=2459516798185250050" target="_blank">Kermit's Key Lime Pie</a></div>
-          <div class="act-note">Browse Duval, grab the chocolate-dipped frozen slice on a stick — then head back to the Perry. Room should be ready right around now.</div>
+          <div class="act-note">Browse Duval, grab the chocolate-dipped frozen slice on a stick. Then head back to the Perry — room should be ready.</div>
         </div>
       </div>
       <div class="activity">
         <div class="act-time">~2:00 PM</div>
         <div class="act-content">
-          <div class="act-name">Pick up bags → Uber to Perry</div>
-          <div class="act-note">Head back to the Perry — room likely ready by now. Pick up bags from the desk, check in, freshen up. Rest of the afternoon is yours.</div>
+          <div class="act-name">Check in — Perry Hotel</div>
+          <div class="act-note">Room likely ready around 2 PM. Pick up bags from the desk, check in, freshen up. Rest of the afternoon is yours.</div>
         </div>
       </div>
       <div class="activity">
-        <div class="act-time">6:00 PM</div>
+        <div class="act-time">~5:30 PM</div>
         <div class="act-content">
-          <div class="act-name">Mallory Square sunset</div>
-          <div class="act-note">Uber over (~10 min). Arrive 30 min before sunset — street performers, local vendors, completely free. Great low-key first evening.</div>
+          <div class="act-name"><a href="https://maps.google.com/?cid=16764466633351029510" target="_blank">Mallory Square</a></div>
+          <div class="act-note">Uber over (~10 min). Arrive 30 min before sunset. Street performers, local vendors, completely free. Great low-key first evening.</div>
         </div>
       </div>
       <div class="activity">
-        <div class="act-time">~8 PM</div>
+        <div class="act-time">~8:00 PM</div>
         <div class="act-content">
           <div class="act-name"><a href="https://www.perrykeywest.com/stock-island-restaurants" target="_blank">Matt's Stock Island Kitchen</a> — dinner</div>
           <div class="act-note">Back to the Perry for dinner on-property. Easy end to a big travel day. Free breakfast included every morning — no rush.</div>
@@ -172,47 +154,39 @@
 
   <!-- TUESDAY -->
 
-  <div class="day open">
+  <div class="day" id="day-tue">
     <div class="day-header" onclick="toggle(this)">
       <div class="day-badge">Tue<br>May 5</div>
       <div class="day-info">
-        <div class="day-title">Spa + Beach + Hot Tin Roof</div>
-        <div class="day-sub">Ocean Wellness 10:15a · Hot Tin Roof dinner</div>
+        <div class="day-title">Beach + Hot Tin Roof</div>
+        <div class="day-sub">Hot Tin Roof dinner locked</div>
       </div>
       <div class="day-chevron">▼</div>
     </div>
     <div class="day-body">
-      <div class="notice notice-warn">Two locked commitments — spa at 10:15 AM, dinner at Hot Tin Roof. Leave Perry by 9:55 AM for the spa.</div>
       <div class="activity">
         <div class="act-time">Morning</div>
         <div class="act-content">
           <div class="act-name"><a href="https://www.perrykeywest.com/stock-island-restaurants" target="_blank">Matt's Stock Island Kitchen</a></div>
-          <div class="act-note">Free breakfast included — eat at Matt's or skip and grab something after the spa. If eating here, leave by 9:45 AM to make the 10:15 AM appointment.</div>
+          <div class="act-note">Free breakfast included — eat at Matt's or explore elsewhere.</div>
         </div>
       </div>
       <div class="activity">
-        <div class="act-time">10:15 AM<div class="locked-badge">LOCKED</div></div>
-        <div class="act-content">
-          <div class="act-name"><a href="https://maps.google.com/?cid=18285309956897800669" target="_blank">Ocean Wellness Spa</a> — couples massage</div>
-          <div class="act-note">Prenatal-certified therapist confirmed. Uber from the Perry ~10 min — leave by 9:55 AM.</div>
-        </div>
-      </div>
-      <div class="activity">
-        <div class="act-time">12:30 PM</div>
+        <div class="act-time">10:30 AM</div>
         <div class="act-content">
           <div class="act-name"><a href="https://maps.google.com/?cid=16685934452895176446" target="_blank">Fort Zachary Taylor Beach</a></div>
-          <div class="act-note">Best beach on the island. Rent chairs + umbrella on-site. Calm water, great shade. Slow afternoon after the massage.</div>
+          <div class="act-note">Best beach on the island. Rent chairs + umbrella on-site. Calm water, great shade.</div>
         </div>
       </div>
       <div class="activity">
         <div class="act-time">3:30 PM</div>
         <div class="act-content">
           <div class="act-name"><a href="https://www.perrykeywest.com/stock-island-restaurants" target="_blank">Salty Oyster</a> — Perry pool bar</div>
-          <div class="act-note">Happy hour, pool, waterfront. Use any remaining hotel credit here. Live music most weekdays. Rest before dinner.</div>
+          <div class="act-note">Happy hour, pool, waterfront. Use hotel credit here. Live music most weekdays. Rest before dinner.</div>
         </div>
       </div>
       <div class="activity">
-        <div class="act-time">8:00 PM<div class="locked-badge">LOCKED</div></div>
+        <div class="act-time">7:00 PM<div class="locked-badge">LOCKED</div></div>
         <div class="act-content">
           <div class="act-name"><a href="https://maps.google.com/?cid=6174778352918866717" target="_blank">Hot Tin Roof</a></div>
           <div class="act-note">Your reservation. Fine dining, waterfront, Gulf sunset views. Lobster bisque is the standout. Uber from Perry ~10 min each way.</div>
@@ -223,64 +197,76 @@
 
   <!-- WEDNESDAY -->
 
-  <div class="day open">
+  <div class="day" id="day-wed">
     <div class="day-header" onclick="toggle(this)">
       <div class="day-badge">Wed<br>May 6</div>
       <div class="day-info">
-        <div class="day-title">Blue Heaven + Beach + Louie's</div>
-        <div class="day-sub">Dolphin cruise 6p · dinner after</div>
+        <div class="day-title">Blue Heaven + Hemingway + Spa + Beach + Dolphin Cruise</div>
+        <div class="day-sub">Ocean Wellness 10:15a · Dolphin cruise 6p locked</div>
       </div>
       <div class="day-chevron">▼</div>
     </div>
     <div class="day-body">
       <div class="activity">
-        <div class="act-time">8:30 AM</div>
+        <div class="act-time">Morning</div>
         <div class="act-content">
-          <div class="act-name"><a href="https://maps.google.com/?cid=15172891216276788505" target="_blank">Blue Heaven</a></div>
-          <div class="act-note">Walk-in only — go early. Open-air courtyard, wandering roosters. Get the French toast. A true Key West institution.</div>
+          <div class="act-name"><a href="https://www.perrykeywest.com/stock-island-restaurants" target="_blank">Matt's Stock Island Kitchen</a></div>
+          <div class="act-note">Free breakfast. Leave by 9:45 AM to make the spa — or grab something light after.</div>
         </div>
       </div>
-      <div class="activity">
-        <div class="act-time">10:15 AM</div>
-        <div class="act-content">
-          <div class="act-name"><a href="https://maps.google.com/?cid=4768768385688895503" target="_blank">Ernest Hemingway Home &amp; Museum</a></div>
-          <div class="act-note">2 min walk from Blue Heaven on Whitehead St. Guided tours every 30 min, ~1 hour total. Gorgeous Spanish Colonial estate, famous six-toed cats. ~$18/person. Go early before the heat picks up.</div>
-        </div>
-      </div>
-      <div class="activity">
-        <div class="act-time">11:30 AM</div>
-        <div class="act-content">
-          <div class="act-name"><a href="https://maps.google.com/?cid=16685934452895176446" target="_blank">Fort Zachary Taylor Beach</a></div>
-          <div class="act-note">Best beach on the island. Chairs + umbrella rentals on-site. Calm water, great shade. Stay as long as you like.</div>
-        </div>
-      </div>
-      <div class="activity">
-        <div class="act-time">4:30 PM</div>
-        <div class="act-content">
-          <div class="act-name">Perry Hotel pool</div>
-          <div class="act-note">Pool and rest before the cruise. Light snack if needed — you'll eat dinner after.</div>
-        </div>
-      </div>
-      <div class="activity">
-        <div class="act-time">6:00 PM<div class="locked-badge">LOCKED</div></div>
-        <div class="act-content">
-          <div class="act-name"><a href="https://maps.google.com/?q=Captain+Choice+Dolphin+Watch+Key+West" target="_blank">Captain Choice Dolphin Watch Sunset Cruise</a></div>
-          <div class="act-note">Departs Historic Seaport — Uber from Perry ~10 min. Sunset dolphin watch, intimate boat. Bring a light layer for the water breeze. Back by ~8 PM.</div>
-        </div>
-      </div>
-      <div class="activity">
-        <div class="act-time">7:00 PM</div>
-        <div class="act-content">
-          <div class="act-name"><a href="https://maps.google.com/?cid=2133076428450823443" target="_blank">Louie's Backyard</a></div>
-          <div class="act-note">Dinner after the cruise. Oceanfront, upscale. Fresh catch grilled, conch chowder. Reserve on OpenTable — ask for an 8 PM table.</div>
-        </div>
-      </div>
+
+```
+  <div class="activity">
+    <div class="act-time">12:00 PM</div>
+    <div class="act-content">
+      <div class="act-name"><a href="https://maps.google.com/?cid=15172891216276788505" target="_blank">Blue Heaven</a></div>
+      <div class="act-note">Walk-in only. Open-air courtyard, wandering roosters. Get the French toast. A true Key West institution.</div>
     </div>
+  </div>
+  <div class="activity">
+    <div class="act-time">1:30 PM</div>
+    <div class="act-content">
+      <div class="act-name"><a href="https://maps.google.com/?cid=4768768385688895503" target="_blank">Ernest Hemingway Home &amp; Museum</a></div>
+      <div class="act-note">2 min walk from Blue Heaven on Whitehead St. Guided tours every 30 min, ~1 hour total. Gorgeous estate, famous six-toed cats. ~$18/person.</div>
+    </div>
+  </div>
+  <div class="activity">
+    <div class="act-time">11:30 AM<div class="locked-badge">LOCKED</div></div>
+    <div class="act-content">
+      <div class="act-name"><a href="https://maps.google.com/?cid=18285309956897800669" target="_blank">Ocean Wellness Spa</a> — couples massage</div>
+      <div class="act-note">Prenatal-certified therapist confirmed. Uber ~5 min from Hemingway House. Leave by 11:15 AM.</div>
+    </div>
+  </div>
+  <div class="activity">
+    <div class="act-time">1:30 PM</div>
+    <div class="act-content">
+      <div class="act-name"><a href="https://maps.google.com/?cid=16685934452895176446" target="_blank">Fort Zachary Taylor Beach</a></div>
+      <div class="act-note">Best beach on the island. Chairs + umbrella on-site. Calm water, great shade. Relax after the massage.</div>
+    </div>
+  </div>
+
+  <div class="activity">
+    <div class="act-time">6:00 PM<div class="locked-badge">LOCKED</div></div>
+    <div class="act-content">
+      <div class="act-name"><a href="https://maps.google.com/?q=Captain+Choice+Dolphin+Watch+Key+West" target="_blank">Captain Choice Dolphin Watch Sunset Cruise</a></div>
+      <div class="act-note">Departs Historic Seaport — Uber from Perry ~10 min. Bring a light layer. Back by ~8 PM.</div>
+    </div>
+  </div>
+  <div class="activity">
+    <div class="act-time">~8:00 PM</div>
+    <div class="act-content">
+      <div class="act-name"><a href="https://maps.google.com/?cid=2133076428450823443" target="_blank">Louie's Backyard</a></div>
+      <div class="act-note">Dinner after the cruise. Oceanfront, upscale. Fresh catch grilled, conch chowder. Reserve on OpenTable — ask for an 8 PM table.</div>
+    </div>
+  </div>
+</div>
+```
+
   </div>
 
   <!-- THURSDAY -->
 
-  <div class="day open">
+  <div class="day" id="day-thu">
     <div class="day-header" onclick="toggle(this)">
       <div class="day-badge">Thu<br>May 7</div>
       <div class="day-info">
@@ -331,7 +317,7 @@
 
   <!-- FRIDAY -->
 
-  <div class="day open">
+  <div class="day" id="day-fri">
     <div class="day-header" onclick="toggle(this)">
       <div class="day-badge">Fri<br>May 8</div>
       <div class="day-info">
@@ -363,31 +349,10 @@
   <div class="section-wrap">
     <div class="section-bar">Book in Advance</div>
     <div class="badge-row">
-      <div class="badge-col" style="background:var(--mid)">DONE</div>
-      <div class="badge-content">
-        <div class="badge-title"><a href="https://maps.google.com/?q=Captain+Choice+Dolphin+Watch+Key+West" target="_blank">Captain Choice Dolphin Watch Sunset Cruise</a></div>
-        <div class="badge-note">Locked Wed May 6 at 6 PM. Departs Historic Seaport — Uber from Perry ~10 min.</div>
-      </div>
-    </div>
-    <div class="badge-row">
-      <div class="badge-col" style="background:var(--mid)">DONE</div>
-      <div class="badge-content">
-        <div class="badge-title"><a href="https://maps.google.com/?cid=18285309956897800669" target="_blank">Ocean Wellness Spa — couples massage</a></div>
-        <div class="badge-note">Locked Tue May 5 at 10:15 AM. Prenatal therapist confirmed. Leave Perry by 9:55 AM.</div>
-      </div>
-    </div>
-    <div class="badge-row">
-      <div class="badge-col" style="background:var(--mid)">DONE</div>
-      <div class="badge-content">
-        <div class="badge-title"><a href="https://maps.google.com/?cid=6174778352918866717" target="_blank">Hot Tin Roof — Tuesday dinner</a></div>
-        <div class="badge-note">Locked Tue May 5. Confirm by phone one day before arrival.</div>
-      </div>
-    </div>
-    <div class="badge-row">
       <div class="badge-col" style="background:var(--terra)">NOW</div>
       <div class="badge-content">
         <div class="badge-title"><a href="https://maps.google.com/?cid=2133076428450823443" target="_blank">Louie's Backyard — Wednesday dinner</a></div>
-        <div class="badge-note">Reserve on OpenTable for Wed May 6 evening.</div>
+        <div class="badge-note">Reserve on OpenTable for Wed May 6 ~8 PM after the cruise.</div>
       </div>
     </div>
   </div>
@@ -415,8 +380,65 @@
 </div>
 
 <script>
-function toggle(h){h.closest('.day').classList.toggle('open')}
-function toggleAll(o){document.querySelectorAll('.day').forEach(d=>o?d.classList.add('open'):d.classList.remove('open'))}
+// Day IDs mapped to dates (month, day)
+const DAY_DATES = {
+  'day-mon': [5, 4],
+  'day-tue': [5, 5],
+  'day-wed': [5, 6],
+  'day-thu': [5, 7],
+  'day-fri': [5, 8],
+};
+
+function getTodayId() {
+  const now = new Date();
+  const m = now.getMonth() + 1;
+  const d = now.getDate();
+  for (const [id, [dm, dd]] of Object.entries(DAY_DATES)) {
+    if (dm === m && dd === d) return id;
+  }
+  return null;
+}
+
+function openToday() {
+  const todayId = getTodayId();
+  document.querySelectorAll('.day').forEach(day => {
+    if (day.id === todayId) {
+      day.classList.add('open');
+    } else {
+      day.classList.remove('open');
+    }
+  });
+  // If no matching day (before/after trip), open Monday by default
+  if (!todayId) {
+    document.getElementById('day-mon').classList.add('open');
+  }
+}
+
+function toggle(h) { h.closest('.day').classList.toggle('open'); }
+function toggleAll(o) { document.querySelectorAll('.day').forEach(d => o ? d.classList.add('open') : d.classList.remove('open')); }
+
+// Auto-expand only today's day
+(function(){
+  const dates = {
+    '2025-05-04': 'Mon',
+    '2025-05-05': 'Tue',
+    '2025-05-06': 'Wed',
+    '2025-05-07': 'Thu',
+    '2025-05-08': 'Fri',
+  };
+  const today = new Date().toLocaleDateString('en-CA');
+  const badge = dates[today];
+  document.querySelectorAll('.day').forEach(d => d.classList.remove('open'));
+  if (badge) {
+    document.querySelectorAll('.day-badge').forEach(b => {
+      if (b.textContent.trim().startsWith(badge)) {
+        b.closest('.day').classList.add('open');
+      }
+    });
+  } else {
+    document.querySelector('.day').classList.add('open');
+  }
+})();
 </script>
 
 </body>
