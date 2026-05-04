@@ -18,10 +18,10 @@
   *{box-sizing:border-box;margin:0;padding:0}
   html{font-size:17px}
   body{font-family:'DM Sans',sans-serif;background:var(--sand);color:var(--stone);-webkit-text-size-adjust:100%}
-  .hero{background:var(--deep);padding:2.75rem 1.5rem 2.25rem;text-align:center;position:relative;overflow:hidden}
+  .hero{background:var(--deep);padding:1.75rem 1.5rem 1.25rem;text-align:center;position:relative;overflow:hidden}
   .hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold)}
   .hero::after{content:'';position:absolute;bottom:0;left:8%;right:8%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
-  .hero-eyebrow{font-size:.68rem;font-weight:500;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:.7rem}
+  .hero-eyebrow{font-size:.68rem;font-weight:500;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:.2rem}
   .hero-title{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:#FDFAF6;line-height:1.05;margin-bottom:.7rem}
   .hero-sub{font-size:.78rem;color:var(--light);letter-spacing:.06em;opacity:.9}
   .notice{padding:.65rem 1.1rem;font-size:.76rem;line-height:1.55}
@@ -30,9 +30,6 @@
   .notice-info{background:var(--info-bg);color:var(--info-tx)}
   .notice strong{font-weight:500}
   .content{max-width:700px;margin:0 auto;padding:1rem 0 1rem}
-  .controls{display:flex;gap:.5rem;padding:.65rem 1rem 0;justify-content:flex-end}
-  .ctrl-btn{font-family:'DM Sans',sans-serif;font-size:.68rem;color:var(--mid);background:none;border:1px solid var(--light);border-radius:20px;padding:.28rem .7rem;cursor:pointer}
-  .ctrl-btn:hover{background:var(--light)}
   .day{margin:.75rem .75rem 0;border-radius:10px;overflow:hidden;box-shadow:0 1px 5px rgba(26,74,69,.09);opacity:0;transform:translateY(10px);animation:fadeUp .35s ease forwards}
   .day:nth-child(2){animation-delay:.05s}.day:nth-child(3){animation-delay:.10s}.day:nth-child(4){animation-delay:.15s}
   .day:nth-child(5){animation-delay:.20s}.day:nth-child(6){animation-delay:.25s}.day:nth-child(7){animation-delay:.30s}
@@ -66,7 +63,7 @@
   .badge-title{font-size:.88rem;font-weight:500;color:var(--deep);line-height:1.3;margin-bottom:2px}
   .badge-title a{color:var(--mid);text-decoration:none;border-bottom:1px solid var(--light)}
   .badge-note{font-size:.73rem;color:var(--pebble);line-height:1.5}
-  .footer{background:var(--deep);color:var(--light);text-align:center;padding:1.1rem 1rem;font-size:.68rem;letter-spacing:.05em;margin-top:1rem}
+  .footer{background:var(--deep);color:var(--light);text-align:center;padding:.85rem 1rem;font-size:.68rem;letter-spacing:.05em;margin-top:1rem;position:sticky;bottom:0;z-index:100}
   .footer strong{color:var(--gold)}
   .footer small{opacity:.6;font-size:.62rem;margin-top:4px;display:block}
   .day-hero{position:relative;height:160px;overflow:hidden;cursor:pointer;-webkit-tap-highlight-color:transparent}
@@ -86,23 +83,19 @@
 <div class="hero">
   <div class="hero-eyebrow">Key West, Florida &nbsp;·&nbsp; May 4–8, 2025</div>
   <h1 class="hero-title"><em>Babymoon</em></h1>
-  <div class="hero-sub">Jay &amp; Puja &nbsp;·&nbsp; Perry Hotel &amp; Marina &nbsp;·&nbsp; Mon – Fri</div>
+
 </div>
 
-<div class="notice notice-gold"><strong>Free breakfast included every morning</strong> at Matt's Stock Island Kitchen — no obligation to eat there though. <strong>$100 Hotel Credit</strong> is separate — best used at Salty Oyster for happy hour drinks or applied to dinner. Confirm scope at check-in.</div>
+<div class="notice notice-gold"><strong>Free breakfast</strong> at Matt's daily — no obligation. <strong>$100 credit</strong> best used at Salty Oyster or dinner. Confirm scope at check-in.</div>
 
 <div class="content">
-  <div class="controls">
-    <button class="ctrl-btn" onclick="toggleAll(true)">Expand all</button>
-    <button class="ctrl-btn" onclick="toggleAll(false)">Collapse all</button>
-  </div>
 
   <!-- MONDAY -->
 
   <div class="day open" id="day-mon">
     <div class="day-hero" onclick="toggle(this)">
-      <div class="day-hero-img" id="img-mon" style="background:linear-gradient(170deg, #FF6B35 0%, #F7931E 25%, #FFC85A 55%, #1A4A45 100%)">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Mallory_square_key_west_at_dusk.jpg/800px-Mallory_square_key_west_at_dusk.jpg" alt="Mallory Square sunset Key West" onerror="this.style.display='none'" loading="lazy"></div>
+      <div class="day-hero-img" id="img-mon" style="background:var(--deep)">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Mallory_Square_at_sunset%2C_Key_West%2C_Florida.jpg/1280px-Mallory_Square_at_sunset%2C_Key_West%2C_Florida.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.remove()"></div>
       <div class="day-hero-overlay">
         <div class="day-hero-eyebrow">Mon · May 4</div>
         <div class="day-hero-title">Arrive, Explore, Check In</div>
@@ -115,36 +108,43 @@
       <div class="activity">
         <div class="act-time">10:24 AM</div>
         <div class="act-content">
-          <div class="act-name">Land at EYW → Perry Hotel</div>
+          <div class="act-name"><a href="https://maps.google.com/?q=Perry+Hotel+Marina+Key+West" target="_blank">Land at EYW → Perry Hotel</a></div>
           <div class="act-note">Uber to the Perry first (~20 min). Drop bags at the front desk — they'll hold them. Then Uber into Old Town hands-free.</div>
         </div>
       </div>
       <div class="activity">
-        <div class="act-time">11:30 AM</div>
+        <div class="act-time">11:00 AM</div>
         <div class="act-content">
-          <div class="act-name"><a href="https://maps.google.com/?cid=8786664853202405372" target="_blank">Butterfly Conservatory</a></div>
-          <div class="act-note">Air-conditioned, peaceful, magical. Perfect first stop after a morning flight. Flamingos, exotic butterflies. Easy 45–60 min visit.</div>
+          <div class="act-name"><a href="https://maps.google.com/?q=Old+Town+Key+West+Florida" target="_blank">Wander Old Town</a></div>
+          <div class="act-note">Walk Duval and side streets — colorful conch houses, local shops, free-roaming roosters. No agenda.</div>
         </div>
       </div>
       <div class="activity">
-        <div class="act-time">1:00 PM</div>
+        <div class="act-time">12:30 PM</div>
         <div class="act-content">
-          <div class="act-name"><a href="https://maps.google.com/?cid=10302192257345296052" target="_blank">Kaya Island Eats</a> — lunch</div>
-          <div class="act-note">Caribbean fusion, Duval St. Grilled fish tacos, shrimp dishes. Mocktail: ask for mai tai without rum — base is all juice.</div>
+          <div class="act-name">🍽 <a href="https://maps.google.com/?cid=10302192257345296052" target="_blank">Kaya Island Eats</a></div>
+          <div class="act-note">Caribbean fusion on Duval. Grilled fish tacos and shrimp. Ask for a mocktail — mai tai base is all juice.</div>
         </div>
       </div>
       <div class="activity">
         <div class="act-time">1:30 PM</div>
         <div class="act-content">
-          <div class="act-name"><a href="https://maps.google.com/?cid=2459516798185250050" target="_blank">Kermit's Key Lime Pie</a></div>
-          <div class="act-note">Browse Duval, grab the chocolate-dipped frozen slice on a stick. Then head back to the Perry — room should be ready.</div>
+          <div class="act-name"><a href="https://maps.google.com/?cid=8786664853202405372" target="_blank">Butterfly Conservatory</a></div>
+          <div class="act-note">Right on Duval, 2 min from Kaya. Air-conditioned escape from midday heat. Flamingos, hundreds of butterflies. 45 min.</div>
         </div>
       </div>
       <div class="activity">
-        <div class="act-time">~2:00 PM</div>
+        <div class="act-time">2:30 PM</div>
         <div class="act-content">
-          <div class="act-name">Check in — Perry Hotel</div>
-          <div class="act-note">Room likely ready around 2 PM. Pick up bags from the desk, check in, freshen up. Rest of the afternoon is yours.</div>
+          <div class="act-name"><a href="https://maps.google.com/?cid=2459516798185250050" target="_blank">Kermit's Key Lime Pie</a></div>
+          <div class="act-note">Next door on Elizabeth St. Chocolate-dipped frozen slice on a stick. Then Uber back to the Perry.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">~3:30 PM</div>
+        <div class="act-content">
+          <div class="act-name"><a href="https://maps.google.com/?q=Perry+Hotel+Marina+Key+West" target="_blank">Check in — Perry Hotel</a></div>
+          <div class="act-note">Freshen up, rest, enjoy the marina. No agenda until sunset.</div>
         </div>
       </div>
       <div class="activity">
@@ -157,7 +157,7 @@
       <div class="activity">
         <div class="act-time">~8:00 PM</div>
         <div class="act-content">
-          <div class="act-name"><a href="https://www.perrykeywest.com/stock-island-restaurants" target="_blank">Matt's Stock Island Kitchen</a> — dinner</div>
+          <div class="act-name">🍽 <a href="https://www.perrykeywest.com/stock-island-restaurants" target="_blank">Matt's Stock Island Kitchen</a></div>
           <div class="act-note">Back to the Perry for dinner on-property. Easy end to a big travel day. Free breakfast included every morning — no rush.</div>
         </div>
       </div>
@@ -168,8 +168,8 @@
 
   <div class="day" id="day-tue">
     <div class="day-hero" onclick="toggle(this)">
-      <div class="day-hero-img" id="img-tue" style="background:linear-gradient(170deg, #006994 0%, #0099CC 30%, #40C4E0 60%, #A8E6EF 100%)">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Fort_Zachary_Taylor_State_Park_beach.jpg/800px-Fort_Zachary_Taylor_State_Park_beach.jpg" alt="Fort Zachary Taylor beach Key West" onerror="this.style.display='none'" loading="lazy"></div>
+      <div class="day-hero-img" id="img-tue" style="background:var(--deep)">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Fort_Zachary_Taylor_beach%2C_Key_West%2C_Florida.jpg/1280px-Fort_Zachary_Taylor_beach%2C_Key_West%2C_Florida.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.remove()"></div>
       <div class="day-hero-overlay">
         <div class="day-hero-eyebrow">Tue · May 5</div>
         <div class="day-hero-title">Beach + Hot Tin Roof</div>
@@ -181,28 +181,42 @@
       <div class="activity">
         <div class="act-time">Morning</div>
         <div class="act-content">
-          <div class="act-name"><a href="https://www.perrykeywest.com/stock-island-restaurants" target="_blank">Matt's Stock Island Kitchen</a></div>
-          <div class="act-note">Free breakfast included — eat at Matt's or explore elsewhere.</div>
+          <div class="act-name">🍽 <a href="https://www.perrykeywest.com/stock-island-restaurants" target="_blank">Matt's Stock Island Kitchen</a></div>
+          <div class="act-note">Free hotel breakfast. Eat here or head straight out.</div>
         </div>
       </div>
       <div class="activity">
-        <div class="act-time">10:30 AM</div>
+        <div class="act-time">10:00 AM</div>
+        <div class="act-content">
+          <div class="act-name"><a href="https://maps.google.com/?q=Key+West+Lighthouse+Museum" target="_blank">Key West Lighthouse</a></div>
+          <div class="act-note">On the way to Fort Zach — 88 steps to panoramic island views. $17, 30 min. Built 1848, genuinely worth it.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">11:00 AM</div>
         <div class="act-content">
           <div class="act-name"><a href="https://maps.google.com/?cid=16685934452895176446" target="_blank">Fort Zachary Taylor Beach</a></div>
-          <div class="act-note">Best beach on the island. Rent chairs + umbrella on-site. Calm water, great shade.</div>
+          <div class="act-note">Best beach on the island. Rent chairs + umbrella on-site. Calm, clear water, great shade. Grab snacks at the beach bar and stay through lunch.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">2:30 PM</div>
+        <div class="act-content">
+          <div class="act-name"><a href="https://maps.google.com/?q=Southernmost+Point+Buoy+Key+West" target="_blank">Southernmost Point Buoy</a></div>
+          <div class="act-note">10-min walk from Fort Zach along the coast. 90 miles to Cuba. The required Key West photo op.</div>
         </div>
       </div>
       <div class="activity">
         <div class="act-time">3:30 PM</div>
         <div class="act-content">
-          <div class="act-name"><a href="https://www.perrykeywest.com/stock-island-restaurants" target="_blank">Salty Oyster</a> — Perry pool bar</div>
-          <div class="act-note">Happy hour, pool, waterfront. Use hotel credit here. Live music most weekdays. Rest before dinner.</div>
+          <div class="act-name"><a href="https://www.perrykeywest.com/stock-island-restaurants" target="_blank">Salty Oyster</a></div>
+          <div class="act-note">Happy hour at the Perry pool bar. Use hotel credit. Live music most weekdays. Rest before dinner.</div>
         </div>
       </div>
       <div class="activity">
         <div class="act-time">7:00 PM<div class="locked-badge">LOCKED</div></div>
         <div class="act-content">
-          <div class="act-name"><a href="https://maps.google.com/?cid=6174778352918866717" target="_blank">Hot Tin Roof</a></div>
+          <div class="act-name">🍽 <a href="https://maps.google.com/?cid=6174778352918866717" target="_blank">Hot Tin Roof</a></div>
           <div class="act-note">Your reservation. Fine dining, waterfront, Gulf sunset views. Lobster bisque is the standout. Uber from Perry ~10 min each way.</div>
         </div>
       </div>
@@ -213,8 +227,8 @@
 
   <div class="day" id="day-wed">
     <div class="day-hero" onclick="toggle(this)">
-      <div class="day-hero-img" id="img-wed" style="background:linear-gradient(170deg, #2D5A27 0%, #4A8C3F 30%, #C9963A 65%, #E8C870 100%)">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Hemingway_house_key_west.jpg/800px-Hemingway_house_key_west.jpg" alt="Hemingway House Key West" onerror="this.style.display='none'" loading="lazy"></div>
+      <div class="day-hero-img" id="img-wed" style="background:var(--deep)">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Hemingway_Home_and_Museum_Key_West_Fl.jpg/1280px-Hemingway_Home_and_Museum_Key_West_Fl.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.remove()"></div>
       <div class="day-hero-overlay">
         <div class="day-hero-eyebrow">Wed · May 6</div>
         <div class="day-hero-title">Blue Heaven + Hemingway + Spa + Cruise</div>
@@ -224,9 +238,9 @@
     </div>
     <div class="day-body">
       <div class="activity">
-        <div class="act-time">8:30 AM</div>
+        <div class="act-time">8:00 AM</div>
         <div class="act-content">
-          <div class="act-name"><a href="https://maps.google.com/?cid=15172891216276788505" target="_blank">Blue Heaven</a></div>
+          <div class="act-name">🍽 <a href="https://maps.google.com/?cid=15172891216276788505" target="_blank">Blue Heaven</a></div>
           <div class="act-note">Walk-in only — go early. Open-air courtyard, wandering roosters. Get the French toast.</div>
         </div>
       </div>
@@ -268,7 +282,7 @@
       <div class="activity">
         <div class="act-time">~8:00 PM</div>
         <div class="act-content">
-          <div class="act-name"><a href="https://maps.google.com/?cid=2133076428450823443" target="_blank">Louie's Backyard</a></div>
+          <div class="act-name">🍽 <a href="https://maps.google.com/?cid=2133076428450823443" target="_blank">Louie's Backyard</a></div>
           <div class="act-note">Dinner after the cruise. Oceanfront, upscale. Reserve on OpenTable — ask for 8 PM.</div>
         </div>
       </div>
@@ -279,8 +293,8 @@
 
   <div class="day" id="day-thu">
     <div class="day-hero" onclick="toggle(this)">
-      <div class="day-hero-img" id="img-thu" style="background:linear-gradient(170deg, #C4623A 0%, #E8844A 30%, #F5C842 60%, #2D7A6E 100%)">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Key_West_Duval_Street.jpg/800px-Key_West_Duval_Street.jpg" alt="Duval Street Key West" onerror="this.style.display='none'" loading="lazy"></div>
+      <div class="day-hero-img" id="img-thu" style="background:var(--deep)">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Key_West_Duval_Street_2.jpg/1280px-Key_West_Duval_Street_2.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.remove()"></div>
       <div class="day-hero-overlay">
         <div class="day-hero-eyebrow">Thu · May 7</div>
         <div class="day-hero-title">Old Town + Santiago's</div>
@@ -293,14 +307,14 @@
       <div class="activity">
         <div class="act-time">9:30 AM</div>
         <div class="act-content">
-          <div class="act-name"><a href="https://maps.google.com/?cid=13835388052429451843" target="_blank">Sunny Eggs</a></div>
+          <div class="act-name">🍽 <a href="https://maps.google.com/?cid=13835388052429451843" target="_blank">Sunny Eggs</a></div>
           <div class="act-note">4.9 stars, Fleming St. Organic eggs, health-forward, house-made pastries. The custard twist alone is worth the trip.</div>
         </div>
       </div>
       <div class="activity">
         <div class="act-time">11:00 AM</div>
         <div class="act-content">
-          <div class="act-name">Bahama Village + Besame Mucho</div>
+          <div class="act-name"><a href="https://maps.google.com/?q=Besame+Mucho+Key+West" target="_blank">Bahama Village + Besame Mucho</a></div>
           <div class="act-note">Wander into Bahama Village — Key West's most charming neighborhood. Besame Mucho on Petronia has unique local gifts, jewelry, and the best baby keepsakes on the island.</div>
         </div>
       </div>
@@ -314,7 +328,7 @@
       <div class="activity">
         <div class="act-time">1:00 PM</div>
         <div class="act-content">
-          <div class="act-name"><a href="https://maps.google.com/?cid=9385428895879407056" target="_blank">Santiago's Bodega</a></div>
+          <div class="act-name">🍽 <a href="https://maps.google.com/?cid=9385428895879407056" target="_blank">Santiago's Bodega</a></div>
           <div class="act-note">Hidden gem tapas on Petronia St. Burrata, patatas bravas, lemon chicken, grilled shrimp &amp; chorizo. No res needed. Best casual lunch on the island.</div>
         </div>
       </div>
@@ -328,7 +342,7 @@
       <div class="activity">
         <div class="act-time">6:30 PM</div>
         <div class="act-content">
-          <div class="act-name"><a href="https://maps.google.com/?cid=9218569751356683670" target="_blank">Seaside Cafe at the Mansion</a></div>
+          <div class="act-name">🍽 <a href="https://maps.google.com/?cid=9218569751356683670" target="_blank">Seaside Cafe at the Mansion</a></div>
           <div class="act-note">Lobster pizza on the rooftop, ocean views. No reservation needed. Casual and memorable last dinner on the island.</div>
         </div>
       </div>
@@ -339,8 +353,8 @@
 
   <div class="day" id="day-fri">
     <div class="day-hero" onclick="toggle(this)">
-      <div class="day-hero-img" id="img-fri" style="background:linear-gradient(170deg, #0A1628 0%, #1A3A6E 30%, #2D6AAE 60%, #F5A623 85%, #FDD835 100%)">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Key_West_International_Airport_2013.jpg/800px-Key_West_International_Airport_2013.jpg" alt="Key West airport departure" onerror="this.style.display='none'" loading="lazy"></div>
+      <div class="day-hero-img" id="img-fri" style="background:var(--deep)">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/EYW_airport.jpg/1280px-EYW_airport.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.remove()"></div>
       <div class="day-hero-overlay">
         <div class="day-hero-eyebrow">Fri · May 8</div>
         <div class="day-hero-title">Departure Morning</div>
@@ -352,18 +366,15 @@
       <div class="activity">
         <div class="act-time">Morning</div>
         <div class="act-content">
-          <div class="act-name">Hotel breakfast + checkout</div>
+          <div class="act-name"><a href="https://maps.google.com/?q=Perry+Hotel+Marina+Key+West" target="_blank">Hotel breakfast + checkout</a></div>
           <div class="act-note">The Perry is closer to EYW than Old Town — easy airport run. EYW is tiny; 40 min early is plenty.</div>
         </div>
       </div>
-      <div class="activity">
-        <div class="act-time">If time</div>
-        <div class="act-content">
-          <div class="act-name"><a href="https://maps.google.com/?cid=2459516798185250050" target="_blank">Kermit's Key Lime Pie</a></div>
-          <div class="act-note">Duval St. opens at 10 AM. Key lime cookies or a whole pie to take home if your flight allows.</div>
-        </div>
-      </div>
-    </div>
+
+```
+</div>
+```
+
   </div>
 
   <!-- BOOK IN ADVANCE -->
@@ -383,7 +394,6 @@
 
 <div class="footer">
   <strong>Jay &amp; Puja</strong> &nbsp;·&nbsp; Key West Babymoon &nbsp;·&nbsp; May 4–8, 2025
-  <small>tap any restaurant name to open in maps</small>
 </div>
 
 <script>
