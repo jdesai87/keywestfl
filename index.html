@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Key West Babymoon · May 4–8, 2025</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --deep:   #1A4A45;
+      --mid:    #2D7A6E;
+      --light:  #C8E6E2;
+      --terra:  #C4623A;
+      --gold:   #C9963A;
+      --sand:   #EDE8E0;
+      --cream:  #F7F3EE;
+      --stone:  #4A4540;
+      --pebble: #7A736C;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--sand);
+      color: var(--stone);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HERO ─────────────────────────────────────────────── */
+    .hero {
+      background: var(--deep);
+      padding: 3.25rem 1.5rem 2.75rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before,
+    .hero::after {
+      content: '';
+      position: absolute;
+      left: 1.25rem; right: 1.25rem;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .hero::before { top: 16px; }
+    .hero::after  { bottom: 16px; }
+
+    .hero-eyebrow {
+      font-size: 0.67rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.1rem;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 10vw, 4.2rem);
+      font-weight: 600;
+      color: var(--cream);
+      line-height: 1.04;
+      margin-bottom: 0.65rem;
+    }
+    .hero-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.05rem, 3.8vw, 1.3rem);
+      color: var(--light);
+      margin-bottom: 0.5rem;
+    }
+    .hero-dates {
+      font-size: 0.73rem;
+      color: var(--light);
+      opacity: 0.72;
+      letter-spacing: 0.13em;
+    }
+
+    /* ── LAYOUT ───────────────────────────────────────────── */
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding-bottom: 3rem;
+    }
+
+    /* ── NOTICE BARS ──────────────────────────────────────── */
+    .notice {
+      margin: 0.7rem 1rem;
+      padding: 0.85rem 1.1rem;
+      border-radius: 10px;
+      font-size: 0.84rem;
+      line-height: 1.58;
+    }
+    .notice strong { font-weight: 600; }
+    .notice-info { background: var(--light);  border-left: 4px solid var(--mid);   color: var(--deep); }
+    .notice-gold { background: #F5E6C8;        border-left: 4px solid var(--gold);  color: var(--stone); }
+    .notice-warn { background: #F5DDD3;        border-left: 4px solid var(--terra); color: var(--stone); }
+
+    /* ── CONTROLS ─────────────────────────────────────────── */
+    .controls {
+      display: flex;
+      gap: 0.5rem;
+      padding: 1rem 1rem 0.35rem;
+    }
+    .btn {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.77rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      padding: 0.4rem 0.95rem;
+      border-radius: 20px;
+      border: 1.5px solid var(--mid);
+      background: transparent;
+      color: var(--deep);
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .btn:hover, .btn:active { background: var(--mid); color: var(--cream); }
+
+    /* ── SECTION TITLE ────────────────────────────────────── */
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem;
+      font-weight: 600;
+      color: var(--deep);
+      padding: 1.7rem 1rem 0.45rem;
+    }
+
+    /* ── DAY CARDS ────────────────────────────────────────── */
+    .day-card {
+      margin: 0.6rem 1rem;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(26,74,69,0.1);
+    }
+
+    .day-header {
+      display: flex;
+      align-items: stretch;
+      cursor: pointer;
+      user-select: none;
+      background: var(--cream);
+      -webkit-tap-highlight-color: transparent;
+      transition: background 0.15s;
+    }
+    @media (hover: hover) {
+      .day-header:hover { background: #EBE5D8; }
+    }
+    .day-header:active { background: var(--light); }
+
+    .day-badge {
+      background: var(--deep);
+      color: var(--cream);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 0.9rem;
+      min-width: 64px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .day-badge .dn {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.95rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .day-badge .dw {
+      font-size: 0.57rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.78;
+      margin-top: 0.2rem;
+    }
+
+    .day-meta {
+      flex: 1;
+      padding: 0.9rem 0.85rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .day-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.18rem;
+      font-weight: 600;
+      color: var(--stone);
+      line-height: 1.2;
+    }
+    .day-sub {
+      font-size: 0.75rem;
+      color: var(--pebble);
+      margin-top: 0.18rem;
+      line-height: 1.4;
+    }
+
+    .day-chevron {
+      display: flex;
+      align-items: center;
+      padding: 0 1rem 0 0.5rem;
+      color: var(--pebble);
+      font-size: 0.85rem;
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+    .day-card.open .day-chevron { transform: rotate(180deg); }
+
+    /* ── DAY BODY ─────────────────────────────────────────── */
+    .day-body { display: none; }
+    .day-card.open .day-body { display: block; }
+
+    .day-notice {
+      padding: 0.75rem 1rem;
+      font-size: 0.81rem;
+      line-height: 1.58;
+    }
+    .day-notice strong { font-weight: 600; }
+    .day-notice.warn {
+      background: #F5DDD3;
+      border-bottom: 1px solid rgba(196,98,58,0.14);
+      color: var(--stone);
+    }
+    .day-notice.info {
+      background: var(--light);
+      border-bottom: 1px solid rgba(45,122,110,0.14);
+      color: var(--deep);
+    }
+
+    /* ── ACTIVITIES ───────────────────────────────────────── */
+    .activity {
+      display: flex;
+      gap: 0.85rem;
+      padding: 0.82rem 1rem;
+    }
+    .activity:nth-child(odd)  { background: var(--cream); }
+    .activity:nth-child(even) { background: var(--sand); }
+
+    .act-time {
+      font-size: 0.69rem;
+      font-weight: 600;
+      color: var(--pebble);
+      min-width: 54px;
+      padding-top: 0.22rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+      letter-spacing: 0.03em;
+    }
+    .act-body { flex: 1; min-width: 0; }
+    .act-name {
+      font-size: 0.93rem;
+      font-weight: 500;
+      color: var(--stone);
+      margin-bottom: 0.2rem;
+      line-height: 1.35;
+    }
+    .act-name a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(45,122,110,0.45);
+    }
+    .act-name a:hover { color: var(--mid); border-bottom-color: var(--mid); }
+    .act-desc {
+      font-size: 0.79rem;
+      color: var(--pebble);
+      line-height: 1.52;
+    }
+
+    .locked {
+      display: inline-block;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: var(--deep);
+      color: var(--cream);
+      padding: 0.14rem 0.5rem;
+      border-radius: 12px;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+      line-height: 1.7;
+    }
+
+    /* ── BOOK / GUIDE SECTIONS ────────────────────────────── */
+    .book-section, .guide-section {
+      margin: 0.6rem 1rem;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(26,74,69,0.1);
+    }
+
+    .section-head { padding: 1rem 1.25rem; }
+    .section-head h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.22rem;
+      font-weight: 600;
+      color: var(--cream);
+    }
+    .section-head p {
+      font-size: 0.74rem;
+      color: var(--light);
+      margin-top: 0.22rem;
+    }
+    .book-section  .section-head { background: var(--deep); }
+    .guide-section .section-head { background: var(--mid); }
+
+    .row-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      padding: 0.88rem 1.25rem;
+      border-top: 1px solid rgba(74,69,64,0.08);
+    }
+    .row-item:nth-child(even) { background: var(--cream); }
+    .row-item:nth-child(odd)  { background: var(--sand); }
+
+    .badge {
+      font-size: 0.61rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      padding: 0.22rem 0.6rem;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      line-height: 1.85;
+    }
+    .badge-done     { background: var(--mid);   color: var(--cream); }
+    .badge-now      { background: var(--terra); color: var(--cream); }
+    .badge-safe     { background: var(--mid);   color: var(--cream); }
+    .badge-avoid    { background: var(--terra); color: var(--cream); }
+    .badge-limit    { background: var(--gold);  color: var(--cream); }
+    .badge-water    { background: var(--deep);  color: var(--cream); }
+    .badge-mocktail { background: var(--deep);  color: var(--cream); }
+    .badge-caffeine { background: var(--deep);  color: var(--cream); }
+    .badge-tip      { background: var(--stone); color: var(--cream); }
+
+    .row-info { flex: 1; min-width: 0; }
+    .row-info-title {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--stone);
+      margin-bottom: 0.2rem;
+      line-height: 1.3;
+    }
+    .row-info-desc {
+      font-size: 0.79rem;
+      color: var(--pebble);
+      line-height: 1.52;
+    }
+
+    /* ── FOOTER ───────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 2.2rem 1rem 1.5rem;
+      font-size: 0.8rem;
+      color: var(--pebble);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+<header class="hero">
+  <p class="hero-eyebrow">Perry Hotel &amp; Marina &nbsp;&middot;&nbsp; Stock Island, Key West</p>
+  <h1>Key West<br>Babymoon</h1>
+  <p class="hero-sub">A warm-weather escape for two</p>
+  <p class="hero-dates">May 4 &ndash; 8, 2025 &nbsp;&middot;&nbsp; 5 Days</p>
+</header>
+
+<div class="container">
+
+  <!-- Global notice bars -->
+  <div class="notice notice-info">
+    <strong>Location:</strong> Perry Hotel is on Stock Island &mdash; about 10 min by Uber to Old Town Key West. A free hotel shuttle is also available.
+  </div>
+  <div class="notice notice-gold">
+    <strong>Hotel perks:</strong> Free breakfast is included every morning at Matt&rsquo;s &mdash; no obligation, just show up. The $100 hotel credit is separate; best used at Salty Oyster happy hour or dinner. Confirm both at check-in.
+  </div>
+
+  <div class="controls">
+    <button class="btn" id="expandAll">Expand all</button>
+    <button class="btn" id="collapseAll">Collapse all</button>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       MONDAY, MAY 4  —  Arrival Day
+  ════════════════════════════════════════════ -->
+  <div class="day-card open" id="day1">
+    <div class="day-header" onclick="toggleDay('day1')">
+      <div class="day-badge"><span class="dn">4</span><span class="dw">Mon</span></div>
+      <div class="day-meta">
+        <div class="day-title">Arrival Day</div>
+        <div class="day-sub">Old Town &middot; Butterfly Conservatory &middot; Mallory Sunset</div>
+      </div>
+      <div class="day-chevron">&#x25BE;</div>
+    </div>
+    <div class="day-body">
+      <div class="day-notice warn">
+        <strong>Check-in note:</strong> Official check-in is 4 PM, but early access is likely around 2 PM. Drop bags at the front desk and explore Old Town hands-free until the room is ready.
+      </div>
+      <div class="activity">
+        <div class="act-time">10:24 AM</div>
+        <div class="act-body">
+          <div class="act-name">Land at EYW</div>
+          <div class="act-desc">Key West International Airport &mdash; one of the smallest commercial airports in the US. You&rsquo;ll be at the curb in minutes.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">~10:40 AM</div>
+        <div class="act-body">
+          <div class="act-name">Uber to Perry Hotel &amp; Marina</div>
+          <div class="act-desc">About 10 min to Stock Island. Drop bags at the front desk and head into Old Town hands-free.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">11:30 AM</div>
+        <div class="act-body">
+          <div class="act-name"><a href="https://www.google.com/maps/search/?api=1&query=Key+West+Butterfly+and+Nature+Conservatory" target="_blank" rel="noopener">Key West Butterfly Conservatory</a></div>
+          <div class="act-desc">Climate-controlled garden with hundreds of live butterflies, flamingos, and tropical birds. Serene, shaded, and perfect for easing into the trip after a flight.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">1:00 PM</div>
+        <div class="act-body">
+          <div class="act-name">Lunch &middot; <a href="https://www.google.com/maps/search/?api=1&query=Kaya+Island+Eats+Key+West+FL" target="_blank" rel="noopener">Kaya Island Eats</a></div>
+          <div class="act-desc">Caribbean-inspired bowls and fresh plates. Great dietary flexibility and easy on a post-travel stomach.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">1:30 PM</div>
+        <div class="act-body">
+          <div class="act-name"><a href="https://www.google.com/maps/search/?api=1&query=Kermit%27s+Key+West+Key+Lime+Shoppe" target="_blank" rel="noopener">Kermit&rsquo;s Key Lime Pie</a></div>
+          <div class="act-desc">The most iconic slice in Key West &mdash; get the frozen-on-a-stick version. A non-negotiable rite of passage the moment you land.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">~2:00 PM</div>
+        <div class="act-body">
+          <div class="act-name">Hotel Check-In &middot; Perry Hotel</div>
+          <div class="act-desc">Settle in, freshen up. Confirm free breakfast and $100 hotel credit at the front desk.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">5:30 PM</div>
+        <div class="act-body">
+          <div class="act-name"><a href="https://www.google.com/maps/search/?api=1&query=Mallory+Square+Key+West+FL" target="_blank" rel="noopener">Mallory Square Sunset</a></div>
+          <div class="act-desc">Key West&rsquo;s famous nightly sunset celebration. Street performers, vendors, and a crowd that cheers the sun into the Gulf. Arrive 30 min early for a good spot.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">8:00 PM</div>
+        <div class="act-body">
+          <div class="act-name">Dinner &middot; <a href="https://www.google.com/maps/search/?api=1&query=Matt%27s+Stock+Island+Kitchen+Key+West+FL" target="_blank" rel="noopener">Matt&rsquo;s Stock Island Kitchen</a></div>
+          <div class="act-desc">On-property at the Perry. Waterfront dining, fresh Gulf catches, no Uber needed. The perfect easy first night.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       TUESDAY, MAY 5  —  Spa & Splurge Day
+  ════════════════════════════════════════════ -->
+  <div class="day-card open" id="day2">
+    <div class="day-header" onclick="toggleDay('day2')">
+      <div class="day-badge"><span class="dn">5</span><span class="dw">Tue</span></div>
+      <div class="day-meta">
+        <div class="day-title">Spa &amp; Splurge Day</div>
+        <div class="day-sub">Couples massage &middot; Beach &middot; Happy hour &middot; Hot Tin Roof</div>
+      </div>
+      <div class="day-chevron">&#x25BE;</div>
+    </div>
+    <div class="day-body">
+      <div class="day-notice warn">
+        <strong>Timing alert:</strong> Two locked commitments today. Leave Perry by <strong>9:55 AM</strong> for the spa. Hot Tin Roof is at <strong>7 PM</strong> sharp &mdash; don&rsquo;t be late.
+      </div>
+      <div class="activity">
+        <div class="act-time">8:00 AM</div>
+        <div class="act-body">
+          <div class="act-name">Breakfast &middot; <a href="https://www.google.com/maps/search/?api=1&query=Matt%27s+Stock+Island+Kitchen+Key+West+FL" target="_blank" rel="noopener">Matt&rsquo;s (included)</a></div>
+          <div class="act-desc">Free hotel breakfast. Eat and be out by 9:50 AM to make the spa on time.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">9:55 AM</div>
+        <div class="act-body">
+          <div class="act-name">Depart Perry &mdash; do not leave later than this</div>
+          <div class="act-desc">Uber to Ocean Wellness Spa. Budget at least 10&ndash;15 min travel time.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">10:15 AM</div>
+        <div class="act-body">
+          <div class="act-name">
+            <a href="https://www.google.com/maps/search/?api=1&query=Ocean+Wellness+Spa+Key+West+FL" target="_blank" rel="noopener">Ocean Wellness Spa &mdash; Couples Massage</a>
+            <span class="locked">Locked</span>
+          </div>
+          <div class="act-desc">Prenatal therapist confirmed. Communicate any discomfort immediately &mdash; they are trained and fully prepared.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">12:30 PM</div>
+        <div class="act-body">
+          <div class="act-name"><a href="https://www.google.com/maps/search/?api=1&query=Fort+Zachary+Taylor+Beach+Key+West+FL" target="_blank" rel="noopener">Fort Zachary Taylor Beach</a></div>
+          <div class="act-desc">Key West&rsquo;s best beach &mdash; calm, clear water, shaded tree cover, and a beach bar for snacks. Bring sunscreen and stay as long as you like.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">3:30 PM</div>
+        <div class="act-body">
+          <div class="act-name">Happy Hour &middot; <a href="https://www.google.com/maps/search/?api=1&query=Salty+Oyster+Dockside+Bar+Key+West+FL" target="_blank" rel="noopener">Salty Oyster</a></div>
+          <div class="act-desc">Great opportunity to use the $100 hotel credit. Casual waterfront bar, excellent cooked seafood for mom. Happy hour runs until 6 PM.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">7:00 PM</div>
+        <div class="act-body">
+          <div class="act-name">
+            Dinner &middot; <a href="https://www.google.com/maps/search/?api=1&query=Hot+Tin+Roof+Restaurant+Key+West+FL" target="_blank" rel="noopener">Hot Tin Roof</a>
+            <span class="locked">Locked</span>
+          </div>
+          <div class="act-desc">One of Key West&rsquo;s most celebrated fine-dining restaurants. Ocean House rooftop with stunning harbor views. Call to confirm the reservation the day before.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       WEDNESDAY, MAY 6  —  Adventure Day
+  ════════════════════════════════════════════ -->
+  <div class="day-card open" id="day3">
+    <div class="day-header" onclick="toggleDay('day3')">
+      <div class="day-badge"><span class="dn">6</span><span class="dw">Wed</span></div>
+      <div class="day-meta">
+        <div class="day-title">Adventure Day</div>
+        <div class="day-sub">Hemingway &middot; Beach &middot; Dolphin cruise &middot; Louie&rsquo;s Backyard</div>
+      </div>
+      <div class="day-chevron">&#x25BE;</div>
+    </div>
+    <div class="day-body">
+      <div class="activity">
+        <div class="act-time">8:30 AM</div>
+        <div class="act-body">
+          <div class="act-name">Breakfast &middot; <a href="https://www.google.com/maps/search/?api=1&query=Blue+Heaven+Restaurant+Key+West+FL" target="_blank" rel="noopener">Blue Heaven</a></div>
+          <div class="act-desc">Walk-in only &mdash; go early to beat the wait. Iconic outdoor Bahamian-style brunch under the trees. One of Key West&rsquo;s most beloved institutions.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">10:15 AM</div>
+        <div class="act-body">
+          <div class="act-name"><a href="https://www.google.com/maps/search/?api=1&query=Ernest+Hemingway+Home+Museum+Key+West+FL" target="_blank" rel="noopener">Ernest Hemingway Home &amp; Museum</a></div>
+          <div class="act-desc">2 min walk from Blue Heaven. Guided tours of the Spanish Colonial estate where Hemingway wrote his best work. About $18/person. Don&rsquo;t miss the famous six-toed cats &mdash; over 40 of them roam the grounds.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">11:30 AM</div>
+        <div class="act-body">
+          <div class="act-name"><a href="https://www.google.com/maps/search/?api=1&query=Fort+Zachary+Taylor+Beach+Key+West+FL" target="_blank" rel="noopener">Fort Zachary Taylor Beach</a></div>
+          <div class="act-desc">Afternoon at the beach before the cruise. Bring snacks and sunscreen &mdash; shaded spots near the fort walls are great for resting.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">4:30 PM</div>
+        <div class="act-body">
+          <div class="act-name">Return to Perry Hotel &middot; Rest &amp; freshen up</div>
+          <div class="act-desc">Head back, rest up before the cruise. Departs at 6 PM sharp &mdash; leave Perry by 5:50 PM.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">~5:50 PM</div>
+        <div class="act-body">
+          <div class="act-name">Uber to Historic Seaport</div>
+          <div class="act-desc">About 10 min from Perry. Arrive a few minutes early to board the vessel.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">6:00 PM</div>
+        <div class="act-body">
+          <div class="act-name">
+            <a href="https://www.google.com/maps/search/?api=1&query=Captain+Choice+Dolphin+Watch+Key+West+FL" target="_blank" rel="noopener">Captain Choice Dolphin Watch Sunset Cruise</a>
+            <span class="locked">Locked</span>
+          </div>
+          <div class="act-desc">Departs Historic Seaport. Wild dolphin watching followed by a stunning Gulf sunset. About 2 hours &mdash; bring a light layer, it cools on the water.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">~8:00 PM</div>
+        <div class="act-body">
+          <div class="act-name">Dinner &middot; <a href="https://www.google.com/maps/search/?api=1&query=Louie%27s+Backyard+Key+West+FL" target="_blank" rel="noopener">Louie&rsquo;s Backyard</a></div>
+          <div class="act-desc">Romantic waterfront restaurant with one of the best views in Key West. Reserve on OpenTable &mdash; this one fills up fast. A truly special evening.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       THURSDAY, MAY 7  —  Easy Day
+  ════════════════════════════════════════════ -->
+  <div class="day-card open" id="day4">
+    <div class="day-header" onclick="toggleDay('day4')">
+      <div class="day-badge"><span class="dn">7</span><span class="dw">Thu</span></div>
+      <div class="day-meta">
+        <div class="day-title">Easy Day</div>
+        <div class="day-sub">Old Town stroll &middot; Tapas lunch &middot; Pool &middot; Early night</div>
+      </div>
+      <div class="day-chevron">&#x25BE;</div>
+    </div>
+    <div class="day-body">
+      <div class="day-notice warn">
+        <strong>Early flight tomorrow:</strong> Be back at the hotel by 9 PM tonight, packed and ready. Checkout is in the morning.
+      </div>
+      <div class="activity">
+        <div class="act-time">9:30 AM</div>
+        <div class="act-body">
+          <div class="act-name">Breakfast &middot; <a href="https://www.google.com/maps/search/?api=1&query=Sunny+Eggs+Key+West+FL" target="_blank" rel="noopener">Sunny Eggs</a></div>
+          <div class="act-desc">Cheerful, laid-back local breakfast spot. Great egg dishes, a&ccedil;ai bowls, and fresh juice. A neighborhood favorite.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">11:00 AM</div>
+        <div class="act-body">
+          <div class="act-name"><a href="https://www.google.com/maps/search/?api=1&query=Old+Town+Key+West+FL" target="_blank" rel="noopener">Browse Old Town</a></div>
+          <div class="act-desc">Wander at your own pace &mdash; Duval Street, Bahama Village, gallery shops, and quiet side streets. No agenda, just exploring.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">1:00 PM</div>
+        <div class="act-body">
+          <div class="act-name">Lunch &middot; <a href="https://www.google.com/maps/search/?api=1&query=Santiago%27s+Bodega+Key+West+FL" target="_blank" rel="noopener">Santiago&rsquo;s Bodega</a></div>
+          <div class="act-desc">Mediterranean-inspired tapas in a cozy, romantic setting. Perfect for sharing plates and a long, relaxed midday meal.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">3:00 PM</div>
+        <div class="act-body">
+          <div class="act-name">Perry Hotel Pool</div>
+          <div class="act-desc">Afternoon at the pool &mdash; a well-earned rest. Float, hydrate, and soak up the last full afternoon in Key West.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">6:30 PM</div>
+        <div class="act-body">
+          <div class="act-name">Dinner &middot; <a href="https://www.google.com/maps/search/?api=1&query=Seaside+Cafe+The+Mansion+Key+West+FL" target="_blank" rel="noopener">Seaside Cafe at the Mansion</a></div>
+          <div class="act-desc">Elegant but relaxed waterfront dining &mdash; a step down from the big splurge nights. A fitting gentle close to the trip.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">9:00 PM</div>
+        <div class="act-body">
+          <div class="act-name">Back at Hotel &mdash; Pack Up</div>
+          <div class="act-desc">Early night. Pack tonight so morning checkout is smooth and stress-free.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       FRIDAY, MAY 8  —  Departure Day
+  ════════════════════════════════════════════ -->
+  <div class="day-card open" id="day5">
+    <div class="day-header" onclick="toggleDay('day5')">
+      <div class="day-badge"><span class="dn">8</span><span class="dw">Fri</span></div>
+      <div class="day-meta">
+        <div class="day-title">Departure Day</div>
+        <div class="day-sub">Checkout &middot; EYW &middot; Safe travels home</div>
+      </div>
+      <div class="day-chevron">&#x25BE;</div>
+    </div>
+    <div class="day-body">
+      <div class="activity">
+        <div class="act-time">Morning</div>
+        <div class="act-body">
+          <div class="act-name">Breakfast &middot; <a href="https://www.google.com/maps/search/?api=1&query=Matt%27s+Stock+Island+Kitchen+Key+West+FL" target="_blank" rel="noopener">Matt&rsquo;s (included)</a></div>
+          <div class="act-desc">One last free hotel breakfast. No rush &mdash; just watch your departure window.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">AM</div>
+        <div class="act-body">
+          <div class="act-name">Hotel Checkout</div>
+          <div class="act-desc">Bags to lobby, keys returned. Confirm any remaining charges are correct.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">If time</div>
+        <div class="act-body">
+          <div class="act-name"><a href="https://www.google.com/maps/search/?api=1&query=Kermit%27s+Key+West+Key+Lime+Shoppe" target="_blank" rel="noopener">Kermit&rsquo;s Key Lime Pie</a></div>
+          <div class="act-desc">If the timing works, grab one more frozen slice for the road. A sweet farewell to Key West.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">To EYW</div>
+        <div class="act-body">
+          <div class="act-name">Uber to Key West Airport (EYW)</div>
+          <div class="act-desc">40 minutes early is plenty at EYW &mdash; it&rsquo;s a tiny airport, no stress. Safe travels home.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       BOOK IN ADVANCE
+  ════════════════════════════════════════════ -->
+  <p class="section-title">Book in Advance</p>
+  <div class="book-section">
+    <div class="section-head">
+      <h2>Reservations &amp; Bookings</h2>
+      <p>What&rsquo;s locked, what&rsquo;s pending, what needs action now</p>
+    </div>
+    <div class="row-item">
+      <span class="badge badge-done">Done</span>
+      <div class="row-info">
+        <div class="row-info-title">Captain Choice Dolphin Watch Sunset Cruise</div>
+        <div class="row-info-desc">Wed May 6 &middot; 6:00 PM &middot; Departs Historic Seaport</div>
+      </div>
+    </div>
+    <div class="row-item">
+      <span class="badge badge-done">Done</span>
+      <div class="row-info">
+        <div class="row-info-title">Ocean Wellness Spa &mdash; Couples Massage</div>
+        <div class="row-info-desc">Tue May 5 &middot; 10:15 AM &middot; Prenatal therapist confirmed</div>
+      </div>
+    </div>
+    <div class="row-item">
+      <span class="badge badge-done">Done</span>
+      <div class="row-info">
+        <div class="row-info-title">Hot Tin Roof</div>
+        <div class="row-info-desc">Tue May 5 &middot; 7:00 PM &middot; Call to confirm by phone the day before</div>
+      </div>
+    </div>
+    <div class="row-item">
+      <span class="badge badge-now">Now</span>
+      <div class="row-info">
+        <div class="row-info-title">Louie&rsquo;s Backyard</div>
+        <div class="row-info-desc">Wed May 6 &middot; ~8:00 PM &middot; Reserve on OpenTable &mdash; fills up fast</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       PREGNANCY-SAFE DINING GUIDE
+  ════════════════════════════════════════════ -->
+  <p class="section-title">Pregnancy-Safe Dining Guide</p>
+  <div class="guide-section">
+    <div class="section-head">
+      <h2>Eating Well in Key West</h2>
+      <p>Seafood-heavy menus, Florida heat &mdash; here&rsquo;s what to know</p>
+    </div>
+    <div class="row-item">
+      <span class="badge badge-safe">Safe</span>
+      <div class="row-info">
+        <div class="row-info-title">Fully cooked seafood</div>
+        <div class="row-info-desc">Shrimp, crab, lobster, scallops, and grilled fish cooked through are all fine. Mahi-mahi, grouper, and snapper are low-mercury choices common on every Key West menu.</div>
+      </div>
+    </div>
+    <div class="row-item">
+      <span class="badge badge-avoid">Avoid</span>
+      <div class="row-info">
+        <div class="row-info-title">Raw shellfish &amp; raw fish</div>
+        <div class="row-info-desc">Raw oysters, clams, sushi, and ceviche should be skipped. Bacterial and parasitic risk is elevated during pregnancy &mdash; ask your server how dishes are prepared.</div>
+      </div>
+    </div>
+    <div class="row-item">
+      <span class="badge badge-avoid">Avoid</span>
+      <div class="row-info">
+        <div class="row-info-title">High-mercury fish</div>
+        <div class="row-info-desc">Shark, swordfish, king mackerel, and tilefish are off the list entirely. These occasionally appear on Florida menus &mdash; confirm with your server if unsure.</div>
+      </div>
+    </div>
+    <div class="row-item">
+      <span class="badge badge-limit">Limit</span>
+      <div class="row-info">
+        <div class="row-info-title">Tuna (albacore / yellowfin)</div>
+        <div class="row-info-desc">Max 6 oz per week across the whole trip. Tuna tacos and tuna steaks are popular here &mdash; enjoy occasionally, but don&rsquo;t have it every day.</div>
+      </div>
+    </div>
+    <div class="row-item">
+      <span class="badge badge-limit">Limit</span>
+      <div class="row-info">
+        <div class="row-info-title">Mahi-mahi &amp; snapper</div>
+        <div class="row-info-desc">Low mercury but best limited to 2&ndash;3 servings per week. Both are everywhere in Key West &mdash; great choices, just rotate through the trip.</div>
+      </div>
+    </div>
+    <div class="row-item">
+      <span class="badge badge-water">Water</span>
+      <div class="row-info">
+        <div class="row-info-title">Hydrate constantly</div>
+        <div class="row-info-desc">Florida heat plus pregnancy means hydration is non-negotiable. Aim for 10+ cups daily. Ask for a large water at every restaurant &mdash; they&rsquo;ll refill without prompting.</div>
+      </div>
+    </div>
+    <div class="row-item">
+      <span class="badge badge-mocktail">Mocktail</span>
+      <div class="row-info">
+        <div class="row-info-title">Virgin drinks are everywhere</div>
+        <div class="row-info-desc">Virgin mojitos, fruit spritzers, and non-alcoholic frozen drinks are available at nearly every bar and restaurant in Key West. Just ask &mdash; no one bats an eye.</div>
+      </div>
+    </div>
+    <div class="row-item">
+      <span class="badge badge-caffeine">Caffeine</span>
+      <div class="row-info">
+        <div class="row-info-title">Keep it under 200 mg/day</div>
+        <div class="row-info-desc">One regular coffee or two to three teas. Cold brew can run higher than expected &mdash; check the size before ordering.</div>
+      </div>
+    </div>
+    <div class="row-item">
+      <span class="badge badge-tip">Tip</span>
+      <div class="row-info">
+        <div class="row-info-title">Ask your server &mdash; they&rsquo;re used to it</div>
+        <div class="row-info-desc">Key West restaurants are accustomed to dietary requests. Don&rsquo;t hesitate to ask how fish is prepared or whether a dish can be modified. They&rsquo;re happy to help.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>Made with love &middot; Key West Babymoon 2025</footer>
+
+</div><!-- /container -->
+
+<script>
+  function toggleDay(id) {
+    document.getElementById(id).classList.toggle('open');
+  }
+
+  document.getElementById('expandAll').addEventListener('click', function () {
+    document.querySelectorAll('.day-card').forEach(function (c) { c.classList.add('open'); });
+  });
+
+  document.getElementById('collapseAll').addEventListener('click', function () {
+    document.querySelectorAll('.day-card').forEach(function (c) { c.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>
