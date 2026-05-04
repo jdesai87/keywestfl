@@ -23,24 +23,15 @@
   .hero::after{content:'';position:absolute;bottom:0;left:8%;right:8%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
   .hero-eyebrow{font-size:.68rem;font-weight:500;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:.2rem}
   .hero-title{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:#FDFAF6;line-height:1.05;margin-bottom:.7rem}
-  .hero-sub{font-size:.78rem;color:var(--light);letter-spacing:.06em;opacity:.9}
   .notice{padding:.65rem 1.1rem;font-size:.76rem;line-height:1.55}
   .notice-gold{background:var(--gold-bg);color:var(--gold-tx)}
   .notice-warn{background:var(--warn-bg);color:var(--warn-tx)}
-  .notice-info{background:var(--info-bg);color:var(--info-tx)}
   .notice strong{font-weight:500}
   .content{max-width:700px;margin:0 auto;padding:1rem 0 0}
   .day{margin:.75rem .75rem 0;border-radius:10px;overflow:hidden;box-shadow:0 1px 5px rgba(26,74,69,.09);opacity:0;transform:translateY(10px);animation:fadeUp .35s ease forwards}
   .day:nth-child(2){animation-delay:.05s}.day:nth-child(3){animation-delay:.10s}.day:nth-child(4){animation-delay:.15s}
   .day:nth-child(5){animation-delay:.20s}.day:nth-child(6){animation-delay:.25s}.day:nth-child(7){animation-delay:.30s}
   @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
-  .day-header{display:flex;align-items:center;gap:.7rem;padding:.65rem .9rem;background:var(--cream);border-bottom:2px solid var(--mid);cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}
-  .day-badge{background:var(--light);color:var(--mid);font-size:.62rem;font-weight:500;letter-spacing:.07em;text-align:center;padding:.32rem .45rem;border-radius:6px;min-width:42px;line-height:1.35;flex-shrink:0;text-transform:uppercase}
-  .day-info{flex:1;min-width:0}
-  .day-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--deep);line-height:1.2}
-  .day-sub{font-size:.68rem;color:var(--pebble);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .day-chevron{color:var(--border);font-size:.7rem;transition:transform .2s;flex-shrink:0}
-  .day.open .day-chevron{transform:rotate(180deg)}
   .day-body{display:none}
   .day.open .day-body{display:block}
   .activity{display:flex;border-bottom:1px solid var(--border)}
@@ -65,7 +56,6 @@
   .badge-note{font-size:.73rem;color:var(--pebble);line-height:1.5}
   .footer{background:var(--deep);color:var(--light);text-align:center;padding:.85rem 1rem;font-size:.68rem;letter-spacing:.05em;margin-top:1rem}
   .footer strong{color:var(--gold)}
-  .footer small{opacity:.6;font-size:.62rem;margin-top:4px;display:block}
   .day-hero{position:relative;height:160px;overflow:hidden;cursor:pointer;-webkit-tap-highlight-color:transparent}
   .day-hero-img{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .4s ease;position:relative}
   .day-hero-img img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0}
@@ -231,8 +221,8 @@
       <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgMjQwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBzbGljZSI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InNreS13ZWQiIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzg3Q0VFQiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNCMEUwRkYiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iMjQwIiBmaWxsPSJ1cmwoI3NreS13ZWQpIi8+CiAgPCEtLSBMYXduIC0tPgogIDxyZWN0IHg9IjAiIHk9IjE4MCIgd2lkdGg9IjgwMCIgaGVpZ2h0PSI2MCIgZmlsbD0iIzRBOEMzRiIvPgogIDxyZWN0IHg9IjAiIHk9IjE3MiIgd2lkdGg9IjgwMCIgaGVpZ2h0PSIxNCIgZmlsbD0iIzVBQTA0QSIvPgogIDwhLS0gSGVtaW5nd2F5IEhvdXNlIC0gU3BhbmlzaCBDb2xvbmlhbCAtLT4KICA8IS0tIE1haW4gaG91c2UgYm9keSAtLT4KICA8cmVjdCB4PSIyMDAiIHk9IjgwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjExMCIgZmlsbD0iI0Y1RUREMCIvPgogIDxyZWN0IHg9IjIwMCIgeT0iODAiIHdpZHRoPSI0MDAiIGhlaWdodD0iMTAiIGZpbGw9IiNFOEQ4QTAiLz4KICA8IS0tIFNlY29uZCBmbG9vciAtLT4KICA8cmVjdCB4PSIyMjAiIHk9IjUwIiB3aWR0aD0iMzYwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjRjVFREQwIi8+CiAgPCEtLSBSb29mIC0tPgogIDxwb2x5Z29uIHBvaW50cz0iMTkwLDgwIDYxMCw4MCA2MDAsNTIgMjAwLDUyIiBmaWxsPSIjOEI0NTEzIiBvcGFjaXR5PSIwLjg1Ii8+CiAgPCEtLSBDb2x1bW5zIC0tPgogIDxyZWN0IHg9IjIzMCIgeT0iMTQwIiB3aWR0aD0iMTIiIGhlaWdodD0iNTAiIGZpbGw9IiNFOEQ4QTAiLz4KICA8cmVjdCB4PSIyODAiIHk9IjE0MCIgd2lkdGg9IjEyIiBoZWlnaHQ9IjUwIiBmaWxsPSIjRThEOEEwIi8+CiAgPHJlY3QgeD0iNTA4IiB5PSIxNDAiIHdpZHRoPSIxMiIgaGVpZ2h0PSI1MCIgZmlsbD0iI0U4RDhBMCIvPgogIDxyZWN0IHg9IjU1OCIgeT0iMTQwIiB3aWR0aD0iMTIiIGhlaWdodD0iNTAiIGZpbGw9IiNFOEQ4QTAiLz4KICA8IS0tIFZlcmFuZGEgcmFpbGluZyAtLT4KICA8cmVjdCB4PSIyMjgiIHk9IjEzNiIgd2lkdGg9IjM0NCIgaGVpZ2h0PSI2IiBmaWxsPSIjRDRDMDgwIi8+CiAgPCEtLSBXaW5kb3dzIC0tPgogIDxyZWN0IHg9IjI1MCIgeT0iOTAiIHdpZHRoPSI1MCIgaGVpZ2h0PSI0MCIgZmlsbD0iIzRBOEM5RSIgb3BhY2l0eT0iMC43IiByeD0iNCIvPgogIDxyZWN0IHg9IjM3NSIgeT0iOTAiIHdpZHRoPSI1MCIgaGVpZ2h0PSI0MCIgZmlsbD0iIzRBOEM5RSIgb3BhY2l0eT0iMC43IiByeD0iNCIvPgogIDxyZWN0IHg9IjUwMCIgeT0iOTAiIHdpZHRoPSI1MCIgaGVpZ2h0PSI0MCIgZmlsbD0iIzRBOEM5RSIgb3BhY2l0eT0iMC43IiByeD0iNCIvPgogIDwhLS0gRG9vciAtLT4KICA8cmVjdCB4PSIzNjAiIHk9IjE0OCIgd2lkdGg9IjgwIiBoZWlnaHQ9IjQyIiBmaWxsPSIjOEI0NTEzIiByeD0iNCIvPgogIDxyZWN0IHg9IjM3NiIgeT0iMTU1IiB3aWR0aD0iMjIiIGhlaWdodD0iMjgiIGZpbGw9IiNBMDUyMkQiIHJ4PSIyIi8+CiAgPHJlY3QgeD0iNDAyIiB5PSIxNTUiIHdpZHRoPSIyMiIgaGVpZ2h0PSIyOCIgZmlsbD0iI0EwNTIyRCIgcng9IjIiLz4KICA8IS0tIFRyb3BpY2FsIHRyZWVzIC0tPgogIDxsaW5lIHgxPSIxMzAiIHkxPSIyMDAiIHgyPSIxNTUiIHkyPSI5MCIgc3Ryb2tlPSIjOEI2OTE0IiBzdHJva2Utd2lkdGg9IjgiLz4KICA8ZWxsaXBzZSBjeD0iMTUyIiBjeT0iODgiIHJ4PSI0MCIgcnk9IjE0IiBmaWxsPSIjMkQ3QTJFIiBvcGFjaXR5PSIwLjkiIHRyYW5zZm9ybT0icm90YXRlKC0xNSwxNTIsODgpIi8+CiAgPGVsbGlwc2UgY3g9IjE2OCIgY3k9Ijk4IiByeD0iMzYiIHJ5PSIxMiIgZmlsbD0iIzNBOEEzRSIgb3BhY2l0eT0iMC44IiB0cmFuc2Zvcm09InJvdGF0ZSgyMCwxNjgsOTgpIi8+CiAgPGxpbmUgeDE9IjY2MCIgeTE9IjIwMCIgeDI9IjY0NSIgeTI9Ijk1IiBzdHJva2U9IiM4QjY5MTQiIHN0cm9rZS13aWR0aD0iNyIvPgogIDxlbGxpcHNlIGN4PSI2NDgiIGN5PSI5MiIgcng9IjM4IiByeT0iMTMiIGZpbGw9IiMyRDdBMkUiIG9wYWNpdHk9IjAuOSIgdHJhbnNmb3JtPSJyb3RhdGUoMTAsNjQ4LDkyKSIvPgogIDxlbGxpcHNlIGN4PSI2MzMiIGN5PSIxMDAiIHJ4PSIzMiIgcnk9IjExIiBmaWxsPSIjM0E4QTNFIiBvcGFjaXR5PSIwLjgiIHRyYW5zZm9ybT0icm90YXRlKC0yMCw2MzMsMTAwKSIvPgogIDwhLS0gQ2F0IHNpbGhvdWV0dGUgLS0+CiAgPGVsbGlwc2UgY3g9IjQyMCIgY3k9IjE5MCIgcng9IjEwIiByeT0iNyIgZmlsbD0iIzg4OCIgb3BhY2l0eT0iMC42Ii8+CiAgPGNpcmNsZSBjeD0iNDMwIiBjeT0iMTg2IiByPSI2IiBmaWxsPSIjODg4IiBvcGFjaXR5PSIwLjYiLz4KICA8bGluZSB4MT0iNDQwIiB5MT0iMTkwIiB4Mj0iNDU1IiB5Mj0iMTgzIiBzdHJva2U9IiM4ODgiIHN0cm9rZS13aWR0aD0iMiIgb3BhY2l0eT0iMC42Ii8+Cjwvc3ZnPg==" style="width:100%;height:100%;object-fit:cover;display:block"></div>
       <div class="day-hero-overlay">
         <div class="day-hero-eyebrow">Wed · May 6</div>
-        <div class="day-hero-title">Blue Heaven + Hemingway + Spa + Cruise</div>
-        <div class="day-hero-sub">Spa 11:30a locked · Dolphin Watch 6p locked</div>
+        <div class="day-hero-title">Blue Heaven + Spa + Beach + Hemingway + Cruise</div>
+        <div class="day-hero-sub">Spa 10:15a · Beach · Hemingway · Cruise 6p</div>
       </div>
       <div class="day-hero-chevron">▼</div>
     </div>
@@ -245,28 +235,28 @@
         </div>
       </div>
       <div class="activity">
-        <div class="act-time">10:15 AM</div>
-        <div class="act-content">
-          <div class="act-name"><a href="https://maps.google.com/?cid=4768768385688895503" target="_blank">Hemingway Home</a></div>
-          <div class="act-note">2 min walk from Blue Heaven on Whitehead St. Guided tours every 30 min. Six-toed cats. ~$18/person.</div>
-        </div>
-      </div>
-      <div class="activity">
-        <div class="act-time">11:30 AM<div class="locked-badge">LOCKED</div></div>
+        <div class="act-time">10:15 AM<div class="locked-badge">LOCKED</div></div>
         <div class="act-content">
           <div class="act-name"><a href="https://maps.google.com/?cid=18285309956897800669" target="_blank">Ocean Wellness Spa</a> — couples massage</div>
-          <div class="act-note">Prenatal-certified therapist confirmed. Uber ~5 min from Hemingway House. Leave by 11:15 AM.</div>
+          <div class="act-note">Prenatal-certified therapist confirmed. Uber ~5 min from Hemingway House. Leave by 10:05 AM.</div>
         </div>
       </div>
       <div class="activity">
-        <div class="act-time">1:30 PM</div>
+        <div class="act-time">12:00 PM</div>
         <div class="act-content">
           <div class="act-name"><a href="https://maps.google.com/?cid=16685934452895176446" target="_blank">Fort Zachary Taylor Beach</a></div>
           <div class="act-note">Best beach on the island. Chairs + umbrella on-site. Calm water, great shade. Relax after the massage.</div>
         </div>
       </div>
       <div class="activity">
-        <div class="act-time">4:30 PM</div>
+        <div class="act-time">2:30 PM</div>
+        <div class="act-content">
+          <div class="act-name"><a href="https://maps.google.com/?cid=4768768385688895503" target="_blank">Hemingway Home</a></div>
+          <div class="act-note">2 min walk from Fort Zach area, Whitehead St. Tour is 20 min, then roam the grounds with the famous six-toed cats. ~$18/person.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="act-time">4:00 PM</div>
         <div class="act-content">
           <div class="act-name">Perry Hotel pool</div>
           <div class="act-note">Rest before the cruise. Light snack at Salty Oyster if needed.</div>
@@ -370,11 +360,7 @@
           <div class="act-note">The Perry is closer to EYW than Old Town — easy airport run. EYW is tiny; 40 min early is plenty.</div>
         </div>
       </div>
-
-```
-</div>
-```
-
+    </div>
   </div>
 
   <!-- BOOK IN ADVANCE -->
@@ -390,15 +376,11 @@
     </div>
   </div>
 
-  <!-- PREGNANCY GUIDE -->
-
 <div class="footer">
   <strong>Jay &amp; Puja</strong> &nbsp;·&nbsp; Key West Babymoon &nbsp;·&nbsp; May 4–8, 2025
 </div>
 
 <script>
-// photos handled via CSS
-
 function toggle(hero) { hero.closest('.day').classList.toggle('open'); }
 function toggleAll(o) { document.querySelectorAll('.day').forEach(d => o ? d.classList.add('open') : d.classList.remove('open')); }
 
